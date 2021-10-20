@@ -1,0 +1,34 @@
+$size: 5rem;
+@for $i from 1 through 6 {
+    h#{$i} {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: $size * (1.5/$i);
+        color: $color2-Encendido;
+        text-decoration: underline $color2 0.13em;
+    }
+}
+
+p {
+    font-family: "Times New Roman", Times, serif;
+    color: $color1-Encendido;
+}
+
+a{
+    color: $color1;
+    &:link {
+        color: $color3;
+    }
+    
+    &:visited {
+        color: $color4;
+        font-style: italic;
+    }
+    
+    &:focus {
+        color: $color4-Encendido;
+    }
+    
+    &:hover {
+        color: $color3-Encendido;
+    }
+}

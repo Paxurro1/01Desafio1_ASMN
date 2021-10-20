@@ -1,0 +1,45 @@
+.nav-horizontal {
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: $color1;
+        li {
+            float: left;
+            a {
+                display: block;
+                color: black;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                &:hover {
+                    background-color: $color3-Encendido;
+                }
+            }
+        }
+    }
+}
+.nav-vertical {
+    ul {
+        background-color: $color2;
+        border: 1px solid $color1-Encendido;
+        li {
+            a {
+                display: block;
+                color: black;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                &:hover {
+                    background-color: $color3-Encendido;
+                }
+            }
+            text-align: center;
+            border-bottom: 1px solid $color1;
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}

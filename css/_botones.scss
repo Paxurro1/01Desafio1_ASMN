@@ -1,0 +1,21 @@
+.button_redondo {
+    border-style: dashed;
+    border-color: $color3-Encendido;
+    display: block;
+    border-radius: 50%;
+    background-color: $color1;
+    &:hover {
+        background-color: $color1-Encendido;
+    }
+}
+
+.button_2 {
+    border-style: double;
+    border-color: $color2-Encendido;
+    display: block;
+    border-radius: 20%;
+    background-color: $color4;
+    &:hover {
+        background-color: $color4-Encendido;
+    }
+}

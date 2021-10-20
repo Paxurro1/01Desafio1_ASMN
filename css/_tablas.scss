@@ -1,0 +1,32 @@
+.table1 {
+    &:nth-child(even) {
+        background-color: $color1-Encendido;
+    }
+    &:nth-child(odd) {
+        background-color: $color2-Encendido;
+    }
+    border: 1px solid $color2;
+    td,
+    th {
+        color: white;
+        text-align: center;
+        vertical-align: middle;
+        border: 0.3em solid $color3;
+    }
+}
+
+.table2 {
+    &:nth-child(even) {
+        background-color: $color3-Encendido;
+    }
+    &:nth-child(odd) {
+        background-color: $color4-Encendido;
+    }
+    border: 1px solid $color4;
+    td,
+    th {
+        text-align: center;
+        vertical-align: middle;
+        border: 0.4em solid $color1;
+    }
+}

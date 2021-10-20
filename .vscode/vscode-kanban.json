@@ -4,28 +4,6 @@
       "assignedTo": {
         "name": "alvar"
       },
-      "creation_time": "2021-10-19T10:45:29.530Z",
-      "id": "4",
-      "references": [],
-      "title": "BD"
-    },
-    {
-      "assignedTo": {
-        "name": "alvar"
-      },
-      "creation_time": "2021-10-19T10:46:46.969Z",
-      "description": {
-        "content": "la clase conexion con la base de datos",
-        "mime": "text/markdown"
-      },
-      "id": "5",
-      "references": [],
-      "title": "Conexion"
-    },
-    {
-      "assignedTo": {
-        "name": "alvar"
-      },
       "creation_time": "2021-10-19T10:45:22.679Z",
       "id": "3",
       "references": [],
@@ -42,6 +20,19 @@
     }
   ],
   "in-progress": [
+    {
+      "assignedTo": {
+        "name": "alvar"
+      },
+      "creation_time": "2021-10-19T10:46:46.969Z",
+      "description": {
+        "content": "la clase conexion con la base de datos",
+        "mime": "text/markdown"
+      },
+      "id": "5",
+      "references": [],
+      "title": "Conexion"
+    },
     {
       "assignedTo": {
         "name": "alvar"
@@ -63,6 +54,15 @@
       "id": "2",
       "references": [],
       "title": "registro"
+    },
+    {
+      "assignedTo": {
+        "name": "alvar"
+      },
+      "creation_time": "2021-10-19T10:45:29.530Z",
+      "id": "4",
+      "references": [],
+      "title": "BD"
     }
   ],
   "testing": [],
