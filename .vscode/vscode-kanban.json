@@ -1,0 +1,70 @@
+{
+  "todo": [
+    {
+      "assignedTo": {
+        "name": "alvar"
+      },
+      "creation_time": "2021-10-19T10:45:29.530Z",
+      "id": "4",
+      "references": [],
+      "title": "BD"
+    },
+    {
+      "assignedTo": {
+        "name": "alvar"
+      },
+      "creation_time": "2021-10-19T10:46:46.969Z",
+      "description": {
+        "content": "la clase conexion con la base de datos",
+        "mime": "text/markdown"
+      },
+      "id": "5",
+      "references": [],
+      "title": "Conexion"
+    },
+    {
+      "assignedTo": {
+        "name": "alvar"
+      },
+      "creation_time": "2021-10-19T10:45:22.679Z",
+      "id": "3",
+      "references": [],
+      "title": "CRUD"
+    },
+    {
+      "assignedTo": {
+        "name": "alvar"
+      },
+      "creation_time": "2021-10-19T10:51:10.774Z",
+      "id": "6",
+      "references": [],
+      "title": "Recuperar pass"
+    }
+  ],
+  "in-progress": [
+    {
+      "assignedTo": {
+        "name": "alvar"
+      },
+      "creation_time": "2021-10-19T10:44:28.557Z",
+      "description": {
+        "content": "el logging",
+        "mime": "text/markdown"
+      },
+      "id": "1",
+      "references": [],
+      "title": "index"
+    },
+    {
+      "assignedTo": {
+        "name": "alvar"
+      },
+      "creation_time": "2021-10-19T10:44:47.592Z",
+      "id": "2",
+      "references": [],
+      "title": "registro"
+    }
+  ],
+  "testing": [],
+  "done": []
+}
