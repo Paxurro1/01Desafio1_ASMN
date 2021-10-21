@@ -43,10 +43,10 @@ class Persona {
     
     public function __toString()
     {
-        $cad = '<td><input type="email" name="email" value="' . $this->email . '"></td>';
-        $cad .= '<td><input type="text" name="usuario" value="' . $this->usuario . '"></td>';
-        $cad .= '<td><input type="password" name="pass" value="' . $this->pass . '"></td>';
-        $cad .= '<td><input type="text" name="foto" value="' . $this->foto . '"></td>';
+        $cad = '<td><input required minlength="5" type="email" name="email" value="' . $this->email . '"></td>';
+        $cad .= '<td><input required minlength="3" type="text" name="usuario" value="' . $this->usuario . '"></td>';
+        $cad .= '<td><input required minlength="5" type="password" name="pass" value="' . $this->pass . '"></td>';
+        $cad .= '<td><input minlength="5" type="text" name="foto" value="' . $this->foto . '"></td>';
         return $cad;
     }
 }

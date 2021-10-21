@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="css/estilo.css">
     <script src="js/validacion.js"></script>
 </head>
-<body onload="validacion()">
+<body>
     <div class="row">
         <div class="s-col-5 m-col-5 l-col-5">
-            <form action="controlador.php" method="post" class="form1" id="formu" novalidate>
+            <form action="controlador.php" method="post" class="form1" id="formu">
                 <div class="row">
                     <div class="s-col-12 m-col-12 l-col-12">
                         <label for="email">Usuario</label>

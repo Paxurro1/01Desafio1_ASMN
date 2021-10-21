@@ -22,7 +22,7 @@
                     <th>editar</th>
                 </tr>';
         foreach ($personas as $ele) {
-            echo '<tr><form class="form2" action="controlador.php" method="post">'. $ele->__toString();
+            echo '<tr><form class="form1" action="controlador.php" method="post">'. $ele->__toString();
             echo '<td><input type="submit" name="borrar" value="X"></td>';
             echo '<td><input type="submit" name="editar" value="edit"></td>';
             echo '</form></tr>';

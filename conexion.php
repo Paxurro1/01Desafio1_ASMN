@@ -48,6 +48,19 @@ class Conexion
         return $fallo;
     }
 
+    public static function editarPersona($email, $usuario, $pass, $foto)
+    {
+        self::abrirConexion();
+        $query = "UPDATE jugador SET email = '$email', usuario = '$usuario', pass = '$pass', foto = '$foto' WHERE email = '$email'";
+        echo $query;
+        if (mysqli_query(self::$conexion, $query)) {
+        } else {
+            $fallo = "Error al editar: " . mysqli_error(self::$conexion) . '<br/>';
+        }
+        self::cerrarConexion();
+        return $fallo;
+    }
+
     public static function getPersona($email, $pass)
     {
         self::abrirConexion();
@@ -78,16 +91,4 @@ class Conexion
         return $jugadores;
     }
 
-    public static function editarPersona($email, $usuario, $pass, $foto)
-    {
-        self::abrirConexion();
-        $query = "DELETE FROM jugador WHERE email = '$email'";
-        echo $query;
-        if (mysqli_query(self::$conexion, $query)) {
-        } else {
-            $fallo = "Error al borrar: " . mysqli_error(self::$conexion) . '<br/>';
-        }
-        self::cerrarConexion();
-        return $fallo;
-    }
 }
