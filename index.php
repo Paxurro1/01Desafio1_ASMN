@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/validacion.js"></script>
 </head>
-<body>
+<body onload="validacion()">
     <header class="row">
         <div class="s-col-4 m-col-4 l-col-4">
             <p>Aquí irá el icono</p>
@@ -36,6 +37,6 @@
         </div>
     </div>
     <a href="">Recuperar contraseña</a>
-    <a href="registro.html">Registrarme</a>
+    <a href="registro.php">Registrarme</a>
 </body>
 </html>

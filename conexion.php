@@ -7,7 +7,7 @@ class Conexion
     public static function abrirConexion()
     {
         self::$conexion = mysqli_connect(Constantes::$HOST, Constantes::$USUARIO, Constantes::$PASS, Constantes::$BBDD);
-        print "Conexión realizada de forma procedimental: " . mysqli_get_server_info(self::$conexion) . "<br/>";
+        //print "Conexión realizada de forma procedimental: " . mysqli_get_server_info(self::$conexion) . "<br/>";
 
         /*
         if (mysqli_connect_errno(self::$conexion)) {
@@ -28,24 +28,24 @@ class Conexion
         self::abrirConexion();
         $query = "INSERT INTO jugador (email, usuario, pass, foto) VALUES ('" . $p->getEmail() . "','" . $p->getUsuario() . "','" . $p->getPass() . "','" . $p->getFoto() . "')";
         if (mysqli_query(self::$conexion, $query)) {
-            echo 'Registro insertado con éxito' . '<br/>';
         } else {
-            echo "Error al insertar: " . mysqli_error(self::$conexion) . '<br/>';
+            $fallo = "Error al insertar: " . mysqli_error(self::$conexion) . '<br/>';
         }
         self::cerrarConexion();
+        return $fallo;
     }
 
     public static function borrarPersona($email)
     {
         self::abrirConexion();
-        $query = "DELETE FROM jugadores WHERE email = '$email'";
+        $query = "DELETE FROM jugador WHERE email = '$email'";
         echo $query;
         if (mysqli_query(self::$conexion, $query)) {
-            echo 'Registro borrado con éxito' . '<br/>';
         } else {
-            echo "Error al borrar: " . mysqli_error(self::$conexion) . '<br/>';
+            $fallo = "Error al borrar: " . mysqli_error(self::$conexion) . '<br/>';
         }
         self::cerrarConexion();
+        return $fallo;
     }
 
     public static function getPersona($email, $pass)
@@ -55,10 +55,8 @@ class Conexion
         $consulta = "SELECT * FROM jugador WHERE email = '$email' AND pass = '$pass'";
         if ($jugador = mysqli_query(self::$conexion, $consulta)) {
             var_dump($jugador);
-            echo 'Registro obtenido con éxito' . '<br/>';
         } else {
             var_dump($jugador);
-            echo "Error al obtener el registro: " . mysqli_error(self::$conexion) . '<br/>';
         }
         self::cerrarConexion();
         return $jugador;
@@ -74,11 +72,22 @@ class Conexion
                 $p = new Persona($fila["email"], $fila["usuario"], $fila["pass"], $fila["foto"]) ;
                 $jugadores[$p->getEmail()] = $p;
             }
-            echo 'Registro obtenido con éxito' . '<br/>';
         } else {
-            echo "Error al obtener el registro: " . mysqli_error(self::$conexion) . '<br/>';
         }
         self::cerrarConexion();
         return $jugadores;
+    }
+
+    public static function editarPersona($email, $usuario, $pass, $foto)
+    {
+        self::abrirConexion();
+        $query = "DELETE FROM jugador WHERE email = '$email'";
+        echo $query;
+        if (mysqli_query(self::$conexion, $query)) {
+        } else {
+            $fallo = "Error al borrar: " . mysqli_error(self::$conexion) . '<br/>';
+        }
+        self::cerrarConexion();
+        return $fallo;
     }
 }

@@ -29,8 +29,8 @@ class Persona {
         return $this->foto;
     }
 
-    function setUsuario($nombre): void {
-        $this->nombre = $nombre;
+    function setUsuario($usuario): void {
+        $this->usuario = $usuario;
     }
 
     function setEmail($email): void {
@@ -43,10 +43,10 @@ class Persona {
     
     public function __toString()
     {
-        $cad = '<td><input type="email" name="nombre" value="' . $this->email . '"></td>';
-        $cad = '<td><input type="text" name="nombre" value="' . $this->usuario . '"></td>';
-        $cad = '<td><input type="text" name="nombre" value="' . $this->nivel . '"></td>';
-        $cad = '<td><input type="number" name="nombre" value="' . $this->llaves . '"></td>';
+        $cad = '<td><input type="email" name="email" value="' . $this->email . '"></td>';
+        $cad .= '<td><input type="text" name="usuario" value="' . $this->usuario . '"></td>';
+        $cad .= '<td><input type="password" name="pass" value="' . $this->pass . '"></td>';
+        $cad .= '<td><input type="text" name="foto" value="' . $this->foto . '"></td>';
         return $cad;
     }
 }
