@@ -4,6 +4,7 @@ class Persona {
     private $usuario;
     private $pass;
     private $foto;
+    private $activo;
 
     public function __construct($email, $usuario, $pass, $foto)
     {
@@ -11,6 +12,7 @@ class Persona {
         $this->usuario = $usuario;
         $this->pass = $pass;
         $this->foto = $foto;
+        $this->activo = 1;
     }
     
     function getUsuario() {
@@ -29,6 +31,14 @@ class Persona {
         return $this->foto;
     }
 
+    function setActivo($activo): void {
+        $this->activo = $activo;
+    }
+
+    function getActivo() {
+        return $this->activo;
+    }
+
     function setUsuario($usuario): void {
         $this->usuario = $usuario;
     }
@@ -45,8 +55,9 @@ class Persona {
     {
         $cad = '<td><input required minlength="5" type="email" name="email" value="' . $this->email . '"></td>';
         $cad .= '<td><input required minlength="3" type="text" name="usuario" value="' . $this->usuario . '"></td>';
-        $cad .= '<td><input required minlength="5" type="password" name="pass" value="' . $this->pass . '"></td>';
-        $cad .= '<td><input minlength="5" type="text" name="foto" value="' . $this->foto . '"></td>';
+        $cad .= '<td><input type="password" name="pass" value=""></td>';
+        $cad .= '<td><input type="text" name="foto" value="' . $this->foto . '"></td>';
+        $cad .= '<td><input type="text" name="activo" value="' . $this->activo . '"></td>';
         return $cad;
     }
 }

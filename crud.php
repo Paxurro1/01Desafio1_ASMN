@@ -18,6 +18,7 @@
                     <th>usuario</th>
                     <th>pass</th>
                     <th>foto</th>
+                    <th>activo</th>
                     <th>eliminar</th>
                     <th>editar</th>
                 </tr>';

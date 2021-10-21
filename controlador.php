@@ -23,6 +23,6 @@ if(isset($_REQUEST['borrar'])){
 }
 // EDITAR
 if(isset($_REQUEST['editar'])){
-    Conexion::editarPersona($_REQUEST['email'], $_REQUEST['usuario'], $_REQUEST['pass'], $_REQUEST['foto']);
+    Conexion::editarPersona($_REQUEST['email'], $_REQUEST['usuario'], $_REQUEST['pass'], $_REQUEST['foto'], $_REQUEST['activo']);
     header("Location:crud.php");
 }

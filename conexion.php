@@ -24,9 +24,8 @@ class Conexion
 
     public static function addPersona($p)
     {
-
         self::abrirConexion();
-        $query = "INSERT INTO jugador (email, usuario, pass, foto) VALUES ('" . $p->getEmail() . "','" . $p->getUsuario() . "','" . $p->getPass() . "','" . $p->getFoto() . "')";
+        $query = "INSERT INTO jugador (email, usuario, pass, foto, activo) VALUES ('" . $p->getEmail() . "','" . $p->getUsuario() . "','" . $p->getPass() . "','" . $p->getFoto() . "','" . $p->getActivo() . "')";
         if (mysqli_query(self::$conexion, $query)) {
         } else {
             $fallo = "Error al insertar: " . mysqli_error(self::$conexion) . '<br/>';
@@ -48,10 +47,14 @@ class Conexion
         return $fallo;
     }
 
-    public static function editarPersona($email, $usuario, $pass, $foto)
+    public static function editarPersona($email, $usuario, $pass, $foto, $activo)
     {
         self::abrirConexion();
-        $query = "UPDATE jugador SET email = '$email', usuario = '$usuario', pass = '$pass', foto = '$foto' WHERE email = '$email'";
+        if(!isset($pass)){
+            $query = "UPDATE jugador SET email = '$email', usuario = '$usuario', pass = '$pass', foto = '$foto', activo = '$activo' WHERE email = '$email'";
+        }else{
+            $query = "UPDATE jugador SET email = '$email', usuario = '$usuario', foto = '$foto', activo = '$activo' WHERE email = '$email'";
+        }
         echo $query;
         if (mysqli_query(self::$conexion, $query)) {
         } else {
@@ -82,7 +85,7 @@ class Conexion
         if ($resultado = mysqli_query(self::$conexion, $consulta)) {
             $jugadores = [];
             while ($fila = mysqli_fetch_array($resultado)) {
-                $p = new Persona($fila["email"], $fila["usuario"], $fila["pass"], $fila["foto"]) ;
+                $p = new Persona($fila["email"], $fila["usuario"], $fila["pass"], $fila["foto"], $fila["activo"]);
                 $jugadores[$p->getEmail()] = $p;
             }
         } else {

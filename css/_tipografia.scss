@@ -14,21 +14,21 @@ p {
 }
 
 a{
-    color: $color1;
     &:link {
-        color: $color3;
+        color: black;
     }
     
     &:visited {
-        color: $color4;
+        color: $color1-Encendido;
         font-style: italic;
+        font-style: oblique;
     }
     
     &:focus {
-        color: $color4-Encendido;
+        color: $color3-Encendido;
     }
     
     &:hover {
-        color: $color3-Encendido;
+        color: $color4-Encendido;
     }
 }

@@ -328,25 +328,22 @@ p {
   color: #0b986a;
 }
 
-a {
-  color: #69d0a3;
-}
-
 a:link {
-  color: #b1e8d0;
+  color: black;
 }
 
 a:visited {
-  color: #d2f4e7;
+  color: #0b986a;
   font-style: italic;
+  font-style: oblique;
 }
 
 a:focus {
-  color: #40b988;
+  color: #32ae7e;
 }
 
 a:hover {
-  color: #32ae7e;
+  color: #40b988;
 }
 
 .button_redondo {
