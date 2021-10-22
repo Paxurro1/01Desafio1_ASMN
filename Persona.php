@@ -55,7 +55,7 @@ class Persona {
     {
         $cad = '<td><input required minlength="5" type="email" name="email" value="' . $this->email . '"></td>';
         $cad .= '<td><input required minlength="3" type="text" name="usuario" value="' . $this->usuario . '"></td>';
-        $cad .= '<td><input type="password" name="pass" value=""></td>';
+        $cad .= '<td><input placeholder="*****" type="password" name="pass" value=""></td>';
         $cad .= '<td><input type="text" name="foto" value="' . $this->foto . '"></td>';
         $cad .= '<td><input type="text" name="activo" value="' . $this->activo . '"></td>';
         return $cad;

@@ -58,6 +58,19 @@ table {
   display: block;
 }
 
+[class*="col-"] {
+  float: left;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1em;
+  width: 100%;
+  display: block;
+}
+
+.row.centrada {
+  margin: auto;
+}
+
 @media (min-width: 480px) {
   .s-col-1 {
     width: 8.33333%;
@@ -175,6 +188,71 @@ table {
   }
 }
 
+.offset-by-1 {
+  margin-left: 8.33333%;
+}
+
+.offset-by-2 {
+  margin-left: 16.66667%;
+}
+
+.offset-by-3 {
+  margin-left: 25%;
+}
+
+.offset-by-4 {
+  margin-left: 33.33333%;
+}
+
+.offset-by-5 {
+  margin-left: 41.66667%;
+}
+
+.offset-by-6 {
+  margin-left: 50%;
+}
+
+.offset-by-7 {
+  margin-left: 58.33333%;
+}
+
+.offset-by-8 {
+  margin-left: 66.66667%;
+}
+
+.offset-by-9 {
+  margin-left: 75%;
+}
+
+.offset-by-10 {
+  margin-left: 83.33333%;
+}
+
+.offset-by-11 {
+  margin-left: 91.66667%;
+}
+
+.offset-by-12 {
+  margin-left: 100%;
+}
+
+img {
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+
+.reportaje img {
+  float: left;
+  width: 50%;
+}
+
+body {
+  background-image: url("./../images/barco.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .nav-horizontal ul {
   list-style-type: none;
   margin: 0;
@@ -225,15 +303,11 @@ table {
   border-bottom: none;
 }
 
-img {
-  display: block;
-  margin: auto;
-  width: 100%;
-}
-
-.reportaje img {
-  float: left;
-  width: 50%;
+.cabecera1 h1 {
+  text-shadow: #4444eb 5px 4px 8px;
+  text-align: center;
+  color: #8d4925;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .table1 {
@@ -275,57 +349,148 @@ img {
   border: 0.4em solid #69d0a3;
 }
 
-h1 {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 7.5rem;
-  color: #22a374;
-  -webkit-text-decoration: underline #8edcb9 0.13em;
-          text-decoration: underline #8edcb9 0.13em;
+@media (min-width: 480px) {
+  h1 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 5rem;
+    color: #0b986a;
+    -webkit-text-decoration: underline #8edcb9 0.13em;
+            text-decoration: underline #8edcb9 0.13em;
+  }
+  h2 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 2.5rem;
+    color: #0b986a;
+    -webkit-text-decoration: underline #8edcb9 0.13em;
+            text-decoration: underline #8edcb9 0.13em;
+  }
+  h3 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1.66667rem;
+    color: #0b986a;
+    -webkit-text-decoration: underline #8edcb9 0.13em;
+            text-decoration: underline #8edcb9 0.13em;
+  }
+  h4 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1.25rem;
+    color: #0b986a;
+    -webkit-text-decoration: underline #8edcb9 0.13em;
+            text-decoration: underline #8edcb9 0.13em;
+  }
+  h5 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1rem;
+    color: #0b986a;
+    -webkit-text-decoration: underline #8edcb9 0.13em;
+            text-decoration: underline #8edcb9 0.13em;
+  }
+  h6 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 0.83333rem;
+    color: #0b986a;
+    -webkit-text-decoration: underline #8edcb9 0.13em;
+            text-decoration: underline #8edcb9 0.13em;
+  }
 }
 
-h2 {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 3.75rem;
-  color: #22a374;
-  -webkit-text-decoration: underline #8edcb9 0.13em;
-          text-decoration: underline #8edcb9 0.13em;
+@media (min-width: 768px) {
+  h1 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 6rem;
+    color: #0b986a;
+    -webkit-text-decoration: underline #8edcb9 0.13em;
+            text-decoration: underline #8edcb9 0.13em;
+  }
+  h2 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 3rem;
+    color: #0b986a;
+    -webkit-text-decoration: underline #8edcb9 0.13em;
+            text-decoration: underline #8edcb9 0.13em;
+  }
+  h3 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 2rem;
+    color: #0b986a;
+    -webkit-text-decoration: underline #8edcb9 0.13em;
+            text-decoration: underline #8edcb9 0.13em;
+  }
+  h4 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1.5rem;
+    color: #0b986a;
+    -webkit-text-decoration: underline #8edcb9 0.13em;
+            text-decoration: underline #8edcb9 0.13em;
+  }
+  h5 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1.2rem;
+    color: #0b986a;
+    -webkit-text-decoration: underline #8edcb9 0.13em;
+            text-decoration: underline #8edcb9 0.13em;
+  }
+  h6 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1rem;
+    color: #0b986a;
+    -webkit-text-decoration: underline #8edcb9 0.13em;
+            text-decoration: underline #8edcb9 0.13em;
+  }
 }
 
-h3 {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 2.5rem;
-  color: #22a374;
-  -webkit-text-decoration: underline #8edcb9 0.13em;
-          text-decoration: underline #8edcb9 0.13em;
-}
-
-h4 {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 1.875rem;
-  color: #22a374;
-  -webkit-text-decoration: underline #8edcb9 0.13em;
-          text-decoration: underline #8edcb9 0.13em;
-}
-
-h5 {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 1.5rem;
-  color: #22a374;
-  -webkit-text-decoration: underline #8edcb9 0.13em;
-          text-decoration: underline #8edcb9 0.13em;
-}
-
-h6 {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 1.25rem;
-  color: #22a374;
-  -webkit-text-decoration: underline #8edcb9 0.13em;
-          text-decoration: underline #8edcb9 0.13em;
+@media (min-width: 1280px) {
+  h1 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 7.5rem;
+    color: #0b986a;
+    -webkit-text-decoration: underline #8edcb9 0.13em;
+            text-decoration: underline #8edcb9 0.13em;
+  }
+  h2 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 3.75rem;
+    color: #0b986a;
+    -webkit-text-decoration: underline #8edcb9 0.13em;
+            text-decoration: underline #8edcb9 0.13em;
+  }
+  h3 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 2.5rem;
+    color: #0b986a;
+    -webkit-text-decoration: underline #8edcb9 0.13em;
+            text-decoration: underline #8edcb9 0.13em;
+  }
+  h4 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1.875rem;
+    color: #0b986a;
+    -webkit-text-decoration: underline #8edcb9 0.13em;
+            text-decoration: underline #8edcb9 0.13em;
+  }
+  h5 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1.5rem;
+    color: #0b986a;
+    -webkit-text-decoration: underline #8edcb9 0.13em;
+            text-decoration: underline #8edcb9 0.13em;
+  }
+  h6 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1.25rem;
+    color: #0b986a;
+    -webkit-text-decoration: underline #8edcb9 0.13em;
+            text-decoration: underline #8edcb9 0.13em;
+  }
 }
 
 p {
   font-family: "Times New Roman", Times, serif;
   color: #0b986a;
+}
+
+a {
+  background-color: black;
 }
 
 a:link {
@@ -339,7 +504,7 @@ a:visited {
 }
 
 a:focus {
-  color: #32ae7e;
+  color: #8edcb9;
 }
 
 a:hover {
@@ -371,7 +536,6 @@ a:hover {
 }
 
 .form1 {
-  width: 300px;
   padding: 16px;
   border-radius: 10px;
   margin: auto;

@@ -50,12 +50,11 @@ class Conexion
     public static function editarPersona($email, $usuario, $pass, $foto, $activo)
     {
         self::abrirConexion();
-        if(!isset($pass)){
+        if (isset($pass)) {
             $query = "UPDATE jugador SET email = '$email', usuario = '$usuario', pass = '$pass', foto = '$foto', activo = '$activo' WHERE email = '$email'";
-        }else{
+        } else {
             $query = "UPDATE jugador SET email = '$email', usuario = '$usuario', foto = '$foto', activo = '$activo' WHERE email = '$email'";
         }
-        echo $query;
         if (mysqli_query(self::$conexion, $query)) {
         } else {
             $fallo = "Error al editar: " . mysqli_error(self::$conexion) . '<br/>';
@@ -93,5 +92,4 @@ class Conexion
         self::cerrarConexion();
         return $jugadores;
     }
-
 }
