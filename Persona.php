@@ -5,14 +5,16 @@ class Persona {
     private $pass;
     private $foto;
     private $activo;
+    private $victorias;
 
-    public function __construct($email, $usuario, $pass, $foto)
+    public function __construct($email, $usuario, $pass, $foto, $activo, $victorias)
     {
         $this->email = $email;
         $this->usuario = $usuario;
         $this->pass = $pass;
         $this->foto = $foto;
-        $this->activo = 1;
+        $this->activo = $activo;
+        $this->victorias = $victorias;
     }
     
     function getUsuario() {
@@ -35,6 +37,14 @@ class Persona {
         $this->activo = $activo;
     }
 
+    function getVictorias() {
+        return $this->victorias;
+    }
+
+    function setVictorias($victorias): void {
+        $this->victorias = $victorias;
+    }
+
     function getActivo() {
         return $this->activo;
     }
@@ -53,11 +63,18 @@ class Persona {
     
     public function __toString()
     {
-        $cad = '<td><input required minlength="5" type="email" name="email" value="' . $this->email . '"></td>';
-        $cad .= '<td><input required minlength="3" type="text" name="usuario" value="' . $this->usuario . '"></td>';
-        $cad .= '<td><input placeholder="*****" type="password" name="pass" value=""></td>';
-        $cad .= '<td><input type="text" name="foto" value="' . $this->foto . '"></td>';
-        $cad .= '<td><input type="text" name="activo" value="' . $this->activo . '"></td>';
+        $cad = '<div class="row">';
+        $cad .= '<label class="s-col-4 m-col-4 l-col-4" for="email">Email</label>';
+        $cad .= '<input disabled class="s-col-8 m-col-8 l-col-8" required minlength="5" type="email" name="email" value="' . $this->email . '">';
+        $cad .= '</div>';
+        $cad .= '<div class="row">';
+        $cad .= '<label class="s-col-4 m-col-4 l-col-4" for="usuario">Usuario</label>';
+        $cad .= '<input class="s-col-8 m-col-8 l-col-8" required minlength="3" type="text" name="usuario" value="' . $this->usuario . '">';
+        $cad .= '</div>';
+        $cad .= '<div class="row">';
+        $cad .= '<label class="s-col-4 m-col-4 l-col-4" for="activo">Activo</label>';
+        $cad .= '<input class="s-col-8 m-col-8 l-col-8" type="text" name="activo" value="' . $this->activo . '">';
+        $cad .= '</div>';
         return $cad;
     }
 }

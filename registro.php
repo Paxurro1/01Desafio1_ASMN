@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <?php
+    session_start();
+    ?>
     <header class="row cabecera1">
         <div class="s-col-12 m-col-12 l-col-12">
             <h1>ATAKEBUNE</h1>
@@ -19,29 +22,43 @@
     <div class="row">
         <div class="s-col-4 m-col-4 l-col-4 offset-by-4">
             <form action="controlador.php" method="post" class="form1" id="formu">
-                    <div class="row">
-                        <label class="s-col-6 m-col-6 l-col-6" for="email">Usuario</label>
-                        <input class="s-col-6 m-col-6 l-col-6" type="text" name="usuario" id="usuario" required minlength="3">
+                <div class="row">
+                    <label class="s-col-6 m-col-6 l-col-6" for="email">Usuario</label>
+                    <input class="s-col-6 m-col-6 l-col-6" type="text" name="usuario" id="usuario" required minlength="3">
+                </div>
+                <div class="row">
+                    <label class="s-col-6 m-col-6 l-col-6" for="pass">Email</label>
+                    <input class="s-col-6 m-col-6 l-col-6" type="email" name="email" id="email" required minlength="5">
+                </div>
+                <div class="row">
+                    <label class="s-col-6 m-col-6 l-col-6" for="pass">Contraseña</label>
+                    <input class="s-col-6 m-col-6 l-col-6" type="password" name="pass" id="pass" required minlength="5">
+                </div>
+                <div class="row">
+                    <label class="s-col-6 m-col-6 l-col-6" for="pass">Contraseña</label>
+                    <input class="s-col-6 m-col-6 l-col-6" type="password" name="pass" id="pass" required minlength="5">
+                </div>
+                <div class="row">
+                    <div class="s-col-12 m-col-12 l-col-12">
+                        <input type="submit" value="Registrarme" name="registro">
                     </div>
-                    <div class="row">
-                        <label class="s-col-6 m-col-6 l-col-6" for="pass">Email</label>
-                        <input class="s-col-6 m-col-6 l-col-6" type="email" name="email" id="email" required minlength="5">
-                    </div>
-                    <div class="row">
-                        <label class="s-col-6 m-col-6 l-col-6" for="pass">Contraseña</label>
-                        <input class="s-col-6 m-col-6 l-col-6" type="password" name="pass" id="pass" required minlength="5">
-                    </div>
-                    <div class="row">
-                        <label class="s-col-6 m-col-6 l-col-6" for="pass">Contraseña</label>
-                        <input class="s-col-6 m-col-6 l-col-6" type="password" name="pass" id="pass" required minlength="5">
-                    </div>
-                    <div class="row">
-                        <div class="s-col-12 m-col-12 l-col-12">
-                            <input type="submit" value="Registrarme" name="registro">
-                        </div>
-                    </div>
-                    
+                </div>
             </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="s-col-3 m-col-3 l-col-3 offset-by-5">
+            <?php
+            if ($_SESSION['volver'] == 'index') {
+            ?>
+                <button class="button_1" onclick="window.location.href='index.php'">volver</button>
+            <?php
+            } else {
+            ?>
+                <button class="button_1" onclick="window.location.href='crud.php'">volver</button>
+            <?php
+            }
+            ?>
         </div>
     </div>
 </body>

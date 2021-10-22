@@ -24,6 +24,9 @@ $maxColumnas: 12;
         .s-col-#{$i} {
             width: (100% / $maxColumnas) * $i;
         }
+        .soffset-by-#{$i} {
+            margin-left: (100% / $maxColumnas) * $i;
+        }
     }
 }
 @media (min-width: 768px) {
@@ -31,12 +34,18 @@ $maxColumnas: 12;
         .m-col-#{$i} {
             width: (100% / $maxColumnas) * $i;
         }
+        .moffset-by-#{$i} {
+            margin-left: (100% / $maxColumnas) * $i;
+        }
     }
 }
 @media (min-width: 1280px) {
     @for $i from 1 through $maxColumnas {
         .l-col-#{$i} {
             width: (100% / $maxColumnas) * $i;
+        }
+        .loffset-by-#{$i} {
+            margin-left: (100% / $maxColumnas) * $i;
         }
     }
 }

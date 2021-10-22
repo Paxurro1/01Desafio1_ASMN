@@ -16,31 +16,34 @@
         </div>
     </header>
     <div class="row">
-        <div class="s-col-8 m-col-8 l-col-8 offset-by-1">
+        <div class="s-col-12 m-col-12 l-col-12">
             <?php
             require_once 'Persona.php';
             require_once 'Conexion.php';
+            session_start();
+            $_SESSION['volver'] = 'crud';
             $personas = Conexion::getPersonas();
-            echo '<table class="table1">
-                        <tr>
-                            <th>email</th>
-                            <th>usuario</th>
-                            <th>pass</th>
-                            <th>foto</th>
-                            <th>activo</th>
-                            <th>eliminar</th>
-                            <th>editar</th>
-                        </tr>';
+            echo '<div class="row">';
             foreach ($personas as $ele) {
-                echo '<tr><form class="form1" action="controlador.php" method="post">' . $ele->__toString();
-                echo '<td><input type="submit" name="borrar" value="X"></td>';
-                echo '<td><input type="submit" name="editar" value="edit"></td>';
-                echo '</form></tr>';
+                echo '<div class="s-col-12 m-col-6 l-col-4">';
+                echo '<form class="form1" action="controlador.php" method="post">' . $ele->__toString();
+                echo '<div class="s-col-6 m-col-6 l-col-6">';
+                echo '<input type="submit" name="editar" value="edit">';
+                echo '</div>';
+                echo '<div class="s-col-6 m-col-6 l-col-6">';
+                echo '<input type="submit" name="borrar" value="X">';
+                echo '</div>';
+                echo '</form>';
+                echo '</div>';
             }
-            echo '</table>';
+            echo '</div>';
             ?>
         </div>
     </div>
+    <div class="row">
+        <div class="s-col-2 m-col-2 l-col-2 offset-by-5">
+            <button class="button_2" onclick="window.location.href='registro.php'">Añadir persona</button>
+        </div>
+    </div>
 </body>
-
 </html>

@@ -75,38 +75,74 @@ table {
   .s-col-1 {
     width: 8.33333%;
   }
+  .soffset-by-1 {
+    margin-left: 8.33333%;
+  }
   .s-col-2 {
     width: 16.66667%;
+  }
+  .soffset-by-2 {
+    margin-left: 16.66667%;
   }
   .s-col-3 {
     width: 25%;
   }
+  .soffset-by-3 {
+    margin-left: 25%;
+  }
   .s-col-4 {
     width: 33.33333%;
+  }
+  .soffset-by-4 {
+    margin-left: 33.33333%;
   }
   .s-col-5 {
     width: 41.66667%;
   }
+  .soffset-by-5 {
+    margin-left: 41.66667%;
+  }
   .s-col-6 {
     width: 50%;
+  }
+  .soffset-by-6 {
+    margin-left: 50%;
   }
   .s-col-7 {
     width: 58.33333%;
   }
+  .soffset-by-7 {
+    margin-left: 58.33333%;
+  }
   .s-col-8 {
     width: 66.66667%;
+  }
+  .soffset-by-8 {
+    margin-left: 66.66667%;
   }
   .s-col-9 {
     width: 75%;
   }
+  .soffset-by-9 {
+    margin-left: 75%;
+  }
   .s-col-10 {
     width: 83.33333%;
+  }
+  .soffset-by-10 {
+    margin-left: 83.33333%;
   }
   .s-col-11 {
     width: 91.66667%;
   }
+  .soffset-by-11 {
+    margin-left: 91.66667%;
+  }
   .s-col-12 {
     width: 100%;
+  }
+  .soffset-by-12 {
+    margin-left: 100%;
   }
 }
 
@@ -114,38 +150,74 @@ table {
   .m-col-1 {
     width: 8.33333%;
   }
+  .moffset-by-1 {
+    margin-left: 8.33333%;
+  }
   .m-col-2 {
     width: 16.66667%;
+  }
+  .moffset-by-2 {
+    margin-left: 16.66667%;
   }
   .m-col-3 {
     width: 25%;
   }
+  .moffset-by-3 {
+    margin-left: 25%;
+  }
   .m-col-4 {
     width: 33.33333%;
+  }
+  .moffset-by-4 {
+    margin-left: 33.33333%;
   }
   .m-col-5 {
     width: 41.66667%;
   }
+  .moffset-by-5 {
+    margin-left: 41.66667%;
+  }
   .m-col-6 {
     width: 50%;
+  }
+  .moffset-by-6 {
+    margin-left: 50%;
   }
   .m-col-7 {
     width: 58.33333%;
   }
+  .moffset-by-7 {
+    margin-left: 58.33333%;
+  }
   .m-col-8 {
     width: 66.66667%;
+  }
+  .moffset-by-8 {
+    margin-left: 66.66667%;
   }
   .m-col-9 {
     width: 75%;
   }
+  .moffset-by-9 {
+    margin-left: 75%;
+  }
   .m-col-10 {
     width: 83.33333%;
+  }
+  .moffset-by-10 {
+    margin-left: 83.33333%;
   }
   .m-col-11 {
     width: 91.66667%;
   }
+  .moffset-by-11 {
+    margin-left: 91.66667%;
+  }
   .m-col-12 {
     width: 100%;
+  }
+  .moffset-by-12 {
+    margin-left: 100%;
   }
 }
 
@@ -153,38 +225,74 @@ table {
   .l-col-1 {
     width: 8.33333%;
   }
+  .loffset-by-1 {
+    margin-left: 8.33333%;
+  }
   .l-col-2 {
     width: 16.66667%;
+  }
+  .loffset-by-2 {
+    margin-left: 16.66667%;
   }
   .l-col-3 {
     width: 25%;
   }
+  .loffset-by-3 {
+    margin-left: 25%;
+  }
   .l-col-4 {
     width: 33.33333%;
+  }
+  .loffset-by-4 {
+    margin-left: 33.33333%;
   }
   .l-col-5 {
     width: 41.66667%;
   }
+  .loffset-by-5 {
+    margin-left: 41.66667%;
+  }
   .l-col-6 {
     width: 50%;
+  }
+  .loffset-by-6 {
+    margin-left: 50%;
   }
   .l-col-7 {
     width: 58.33333%;
   }
+  .loffset-by-7 {
+    margin-left: 58.33333%;
+  }
   .l-col-8 {
     width: 66.66667%;
+  }
+  .loffset-by-8 {
+    margin-left: 66.66667%;
   }
   .l-col-9 {
     width: 75%;
   }
+  .loffset-by-9 {
+    margin-left: 75%;
+  }
   .l-col-10 {
     width: 83.33333%;
+  }
+  .loffset-by-10 {
+    margin-left: 83.33333%;
   }
   .l-col-11 {
     width: 91.66667%;
   }
+  .loffset-by-11 {
+    margin-left: 91.66667%;
+  }
   .l-col-12 {
     width: 100%;
+  }
+  .loffset-by-12 {
+    margin-left: 100%;
   }
 }
 

@@ -47,14 +47,10 @@ class Conexion
         return $fallo;
     }
 
-    public static function editarPersona($email, $usuario, $pass, $foto, $activo)
+    public static function editarPersona($email, $usuario, $activo)
     {
         self::abrirConexion();
-        if (isset($pass)) {
-            $query = "UPDATE jugador SET email = '$email', usuario = '$usuario', pass = '$pass', foto = '$foto', activo = '$activo' WHERE email = '$email'";
-        } else {
-            $query = "UPDATE jugador SET email = '$email', usuario = '$usuario', foto = '$foto', activo = '$activo' WHERE email = '$email'";
-        }
+        $query = "UPDATE jugador SET email = '$email', usuario = '$usuario', activo = '$activo' WHERE email = '$email'";
         if (mysqli_query(self::$conexion, $query)) {
         } else {
             $fallo = "Error al editar: " . mysqli_error(self::$conexion) . '<br/>';
@@ -84,7 +80,7 @@ class Conexion
         if ($resultado = mysqli_query(self::$conexion, $consulta)) {
             $jugadores = [];
             while ($fila = mysqli_fetch_array($resultado)) {
-                $p = new Persona($fila["email"], $fila["usuario"], $fila["pass"], $fila["foto"], $fila["activo"]);
+                $p = new Persona($fila["email"], $fila["usuario"], $fila["pass"], $fila["foto"], $fila["activo"], $fila['victorias']);
                 $jugadores[$p->getEmail()] = $p;
             }
         } else {

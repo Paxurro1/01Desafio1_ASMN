@@ -12,7 +12,7 @@ if(isset($_REQUEST['logging_index'])){
 }
 // EL REGISTRO
 if(isset($_REQUEST['registro'])){
-    $p = new Persona($_REQUEST['email'], $_REQUEST['usuario'], $_REQUEST['pass'], null);
+    $p = new Persona($_REQUEST['email'], $_REQUEST['usuario'], $_REQUEST['pass'], null, 1, 0);
     Conexion::addPersona($p);
     header("Location:index.php");
 }
@@ -23,6 +23,6 @@ if(isset($_REQUEST['borrar'])){
 }
 // EDITAR
 if(isset($_REQUEST['editar'])){
-    Conexion::editarPersona($_REQUEST['email'], $_REQUEST['usuario'], $_REQUEST['pass'], $_REQUEST['foto'], $_REQUEST['activo']);
+    Conexion::editarPersona($_REQUEST['email'], $_REQUEST['usuario'], $_REQUEST['activo']);
     header("Location:crud.php");
 }
