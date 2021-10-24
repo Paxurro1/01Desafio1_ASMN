@@ -14,7 +14,7 @@ if(isset($_REQUEST['loging_index'])){
 if(isset($_REQUEST['registro'])){
     $p = new Persona($_REQUEST['email'], $_REQUEST['usuario'], $_REQUEST['pass'], null, 1, 0);
     Conexion::addPersona($p);
-    header("Location:index.php");
+    header("Location:registro.php");
 }
 // BORRADO
 if(isset($_REQUEST['borrar'])){

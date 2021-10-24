@@ -18,10 +18,10 @@
     <div class="row">
         <div class="s-col-12 m-col-12 l-col-12">
             <?php
-            require_once 'Persona.php';
-            require_once 'Conexion.php';
             session_start();
             $_SESSION['volver'] = 'crud';
+            require_once 'Persona.php';
+            require_once 'Conexion.php';
             $personas = Conexion::getPersonas();
             echo '<div class="row">';
             foreach ($personas as $ele) {
