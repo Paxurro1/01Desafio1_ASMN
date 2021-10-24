@@ -33,7 +33,7 @@
                 </div>
                 <div class="row">
                     <div class="s-col-12 m-col-12 l-col-12">
-                        <input type="submit" value="Logging" name="logging_index">
+                        <input type="submit" value="Logging" name="loging_index">
                     </div>
                 </div>
             </form>

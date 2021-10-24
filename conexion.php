@@ -62,10 +62,13 @@ class Conexion
     public static function getPersona($email, $pass)
     {
         self::abrirConexion();
+        $jugador = null;
         $consulta = "SELECT * FROM jugador WHERE email = '$email' AND pass = '$pass'";
-        if ($jugador = mysqli_query(self::$conexion, $consulta)) {
-        }else{
-            $jugador = null;
+        $resultado = mysqli_query(self::$conexion, $consulta);
+        if ($resultado) {
+            while ($fila = mysqli_fetch_array($resultado)) {
+                $jugador = new Persona($fila["email"], $fila["usuario"], $fila["pass"], $fila["foto"], $fila["activo"], $fila['victorias']);
+            }
         }
         self::cerrarConexion();
         return $jugador;
