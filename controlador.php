@@ -4,10 +4,10 @@ require_once 'Conexion.php';
 // EL LOGGING
 if(isset($_REQUEST['logging_index'])){
     $jugador = Conexion::getPersona($_REQUEST['email'], $_REQUEST['pass']);
-    if($jugador == null){
-        header("Location:index.php");
+    if($jugador != null){
+        header("Location:menu.php");
     }else{
-        header("Location:construccion.html");
+        header("Location:index.php");
     }
 }
 // EL REGISTRO
