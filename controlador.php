@@ -2,7 +2,7 @@
 require_once 'Persona.php';
 require_once 'Conexion.php';
 // EL LOGGING
-if(isset($_REQUEST['logging_index'])){
+if(isset($_REQUEST['loging_index'])){
     $jugador = Conexion::getPersona($_REQUEST['email'], $_REQUEST['pass']);
     if($jugador != null){
         header("Location:menu.php");
