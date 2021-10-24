@@ -84,7 +84,6 @@ class Conexion
                 $p = new Persona($fila["email"], $fila["usuario"], $fila["pass"], $fila["foto"], $fila["activo"], $fila['victorias']);
                 $jugadores[$p->getEmail()] = $p;
             }
-        } else {
         }
         self::cerrarConexion();
         return $jugadores;
