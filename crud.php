@@ -16,10 +16,18 @@
         </div>
     </header>
     <div class="row">
+        <div class="s-col-12 m-col-12 l-col-12 nav-horizontal">
+            <ul>
+                <li><a href="crud.php">Admin usuarios</a></li>
+                <li><a href="preguntas.php">Crear pregunta</a></li>
+                <li><a href="menu.php">Menu</a></li>
+                <li><a href="index.php">Cerrar</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
         <div class="s-col-12 m-col-12 l-col-12">
             <?php
-            session_start();
-            $_SESSION['volver'] = 'crud';
             require_once 'Persona.php';
             require_once 'Conexion.php';
             $personas = Conexion::getPersonas();
@@ -44,7 +52,7 @@
     </div>
     <div class="row">
         <div class="s-col-2 m-col-2 l-col-2 offset-by-5">
-            <button class="button_2" onclick="window.location.href='registro.php'">Añadir persona</button>
+            <button class="button_2" onclick="window.location.href='addJugador.php'">Añadir persona</button>
         </div>
     </div>
 </body>

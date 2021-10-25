@@ -1,6 +1,7 @@
 <?php
 require_once 'Persona.php';
 require_once 'Conexion.php';
+session_start();
 // EL LOGGING
 if (isset($_REQUEST['loging_index'])) {
     $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
@@ -11,6 +12,7 @@ if (isset($_REQUEST['loging_index'])) {
     if ($recaptcha->score >= 0.7) {
         $jugador = Conexion::getPersona($_REQUEST['email'], $_REQUEST['pass']);
         if ($jugador != null) {
+            $_SESSION['jugador'] = $jugador;
             header("Location:menu.php");
         } else {
             header("Location:index.php");
@@ -28,11 +30,18 @@ if (isset($_REQUEST['registro'])) {
     $recaptcha = json_decode($recaptcha);
     if ($recaptcha->score >= 0.7) {
         $p = new Persona($_REQUEST['email'], $_REQUEST['usuario'], $_REQUEST['pass'], null, 1, 0);
+
         Conexion::addPersona($p);
-        header("Location:registro.php");
+        header("Location:index.php");
     } else {
         header("Location:registro.php");
     }
+}
+// ADD USUARIO DESDE CRUD
+if (isset($_REQUEST['addJugador'])) {
+    $p = new Persona($_REQUEST['email'], $_REQUEST['usuario'], $_REQUEST['pass'], null, 1, 0);
+    Conexion::addPersona($p);
+    header("Location:addJugador.php");
 }
 // BORRADO
 if (isset($_REQUEST['borrar'])) {

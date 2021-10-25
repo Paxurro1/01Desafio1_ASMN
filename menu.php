@@ -16,6 +16,16 @@
         </div>
     </header>
     <div class="row">
+        <div class="s-col-12 m-col-12 l-col-12 nav-horizontal">
+            <ul>
+                <li><a href="crud.php">Admin usuarios</a></li>
+                <li><a href="preguntas.php">Crear pregunta</a></li>
+                <li><a href="menu.php">Menu</a></li>
+                <li><a href="index.php">Cerrar</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
         <div class="s-col-4 m-col-4 l-col-4 offset-by-4">
             <div class="row">
                 <button class="button_1 s-col-12 m-col-12 l-col-12">Unirme a una partida</button>

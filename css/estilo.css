@@ -374,8 +374,9 @@ body {
 }
 
 .nav-horizontal ul li a {
+  background-color: #0b986a;
   display: block;
-  color: black;
+  color: #2a0000;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;

@@ -13,8 +13,9 @@ body{
         li {
             float: left;
             a {
+                background-color: $color1-Encendido;
                 display: block;
-                color: black;
+                color: $marron1;
                 text-align: center;
                 padding: 14px 16px;
                 text-decoration: none;
