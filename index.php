@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/estilo.css">
+    <script src='https://www.google.com/recaptcha/api.js?render=6LebEPEcAAAAANcqC4TpmZCeMAww49Vo13jntCJp'></script>
+    <script src="js/captchaIndex.js"></script>
     <script src="js/validacion.js"></script>
 </head>
 
@@ -22,14 +24,15 @@
     </header>
     <div class="row">
         <div class="s-col-4 m-col-4 l-col-4 offset-by-4">
-            <form action="controlador.php" method="post" class="form1">
+            <form action="controlador.php" method="post" class="form1" id="formulario_loging">
+                <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                 <div class="row">
                     <label class="s-col-6 m-col-6 l-col-6" for="email">Email</label>
-                    <input class="s-col-6 m-col-6 l-col-6" type="email" name="email" id="">
+                    <input class="s-col-6 m-col-6 l-col-6" type="email" name="email" id="" required minlength="5">
                 </div>
                 <div class="row">
                     <label class="s-col-6 m-col-6 l-col-6" for="pass">Contraseña</label>
-                    <input class="s-col-6 m-col-6 l-col-6" type="password" name="pass" id="">
+                    <input class="s-col-6 m-col-6 l-col-6" type="password" name="pass" id="" required minlength="5">
                 </div>
                 <div class="row">
                     <div class="s-col-12 m-col-12 l-col-12">
