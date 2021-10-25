@@ -27,11 +27,13 @@
             foreach ($personas as $ele) {
                 echo '<div class="s-col-12 m-col-6 l-col-4">';
                 echo '<form class="form1" action="controlador.php" method="post">' . $ele->__toString();
+                echo '<div class="row">';
                 echo '<div class="s-col-6 m-col-6 l-col-6">';
                 echo '<input type="submit" name="editar" value="edit">';
                 echo '</div>';
                 echo '<div class="s-col-6 m-col-6 l-col-6">';
                 echo '<input type="submit" name="borrar" value="X">';
+                echo '</div>';
                 echo '</div>';
                 echo '</form>';
                 echo '</div>';
