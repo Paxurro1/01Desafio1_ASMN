@@ -18,9 +18,22 @@
     <div class="row">
         <div class="s-col-12 m-col-12 l-col-12 nav-horizontal">
             <ul>
-                <li><a href="crud.php">Admin usuarios</a></li>
-                <li><a href="preguntas.php">Crear pregunta</a></li>
                 <li><a href="menu.php">Menu</a></li>
+                <?php
+                require_once 'Persona.php';
+                session_start();
+                $p = $_SESSION['jugador'];
+                if ($p->getRol() == 2 || $p->getRol() == 3) {
+                ?>
+                    <li><a href="preguntas.php">Crear pregunta</a></li>
+                <?php
+                }
+                if ($p->getRol() == 3) {
+                ?>
+                    <li><a href="crud.php">Admin usuarios</a></li>
+                <?php
+                }
+                ?>
                 <li><a href="index.php">Cerrar</a></li>
             </ul>
         </div>

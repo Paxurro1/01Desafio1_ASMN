@@ -6,8 +6,9 @@ class Persona {
     private $foto;
     private $activo;
     private $victorias;
+    private $rol;
 
-    public function __construct($email, $usuario, $pass, $foto, $activo, $victorias)
+    public function __construct($email, $usuario, $pass, $foto, $activo, $victorias, $rol)
     {
         $this->email = $email;
         $this->usuario = $usuario;
@@ -15,6 +16,7 @@ class Persona {
         $this->foto = $foto;
         $this->activo = $activo;
         $this->victorias = $victorias;
+        $this->rol = $rol;
     }
     
     function getUsuario() {
@@ -35,6 +37,14 @@ class Persona {
 
     function setActivo($activo): void {
         $this->activo = $activo;
+    }
+
+    function getRol() {
+        return $this->rol;
+    }
+
+    function setRol($rol): void {
+        $this->rol = $rol;
     }
 
     function getVictorias() {
@@ -74,6 +84,10 @@ class Persona {
         $cad .= '<div class="row">';
         $cad .= '<label class="s-col-4 m-col-4 l-col-4" for="activo">Activo</label>';
         $cad .= '<input class="s-col-8 m-col-8 l-col-8" type="text" name="activo" value="' . $this->activo . '">';
+        $cad .= '</div>';
+        $cad .= '<div class="row">';
+        $cad .= '<label class="s-col-4 m-col-4 l-col-4" for="rol">Rol</label>';
+        $cad .= '<input class="s-col-8 m-col-8 l-col-8" type="text" name="rol" value="' . $this->rol . '">';
         $cad .= '</div>';
         return $cad;
     }

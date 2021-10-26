@@ -25,7 +25,7 @@ class Conexion
     public static function addPersona($p)
     {
         self::abrirConexion();
-        $query = "INSERT INTO jugador (email, usuario, pass, foto, activo) VALUES ('" . $p->getEmail() . "','" . $p->getUsuario() . "','" . $p->getPass() . "','" . $p->getFoto() . "','" . $p->getActivo() . "')";
+        $query = "INSERT INTO jugador (email, usuario, pass, foto, activo, rol) VALUES ('" . $p->getEmail() . "','" . $p->getUsuario() . "','" . $p->getPass() . "','" . $p->getFoto() . "','" . $p->getActivo() . "','" . $p->getRol() . "')";
         if (mysqli_query(self::$conexion, $query)) {
         } else {
             $fallo = "Error al insertar: " . mysqli_error(self::$conexion) . '<br/>';
@@ -47,10 +47,10 @@ class Conexion
         return $fallo;
     }
 
-    public static function editarPersona($email, $usuario, $activo)
+    public static function editarPersona($email, $usuario, $activo, $rol)
     {
         self::abrirConexion();
-        $query = "UPDATE jugador SET email = '$email', usuario = '$usuario', activo = '$activo' WHERE email = '$email'";
+        $query = "UPDATE jugador SET email = '$email', usuario = '$usuario', activo = '$activo', rol = '$rol' WHERE email = '$email'";
         if (mysqli_query(self::$conexion, $query)) {
         } else {
             $fallo = "Error al editar: " . mysqli_error(self::$conexion) . '<br/>';
@@ -67,7 +67,7 @@ class Conexion
         $resultado = mysqli_query(self::$conexion, $consulta);
         if ($resultado) {
             while ($fila = mysqli_fetch_array($resultado)) {
-                $jugador = new Persona($fila["email"], $fila["usuario"], $fila["pass"], $fila["foto"], $fila["activo"], $fila['victorias']);
+                $jugador = new Persona($fila["email"], $fila["usuario"], $fila["pass"], $fila["foto"], $fila["activo"], $fila['victorias'], $fila['rol']);
             }
         }
         self::cerrarConexion();
@@ -81,7 +81,7 @@ class Conexion
         if ($resultado = mysqli_query(self::$conexion, $consulta)) {
             $jugadores = [];
             while ($fila = mysqli_fetch_array($resultado)) {
-                $p = new Persona($fila["email"], $fila["usuario"], $fila["pass"], $fila["foto"], $fila["activo"], $fila['victorias']);
+                $p = new Persona($fila["email"], $fila["usuario"], $fila["pass"], $fila["foto"], $fila["activo"], $fila['victorias'], $fila['rol']);
                 $jugadores[$p->getEmail()] = $p;
             }
         }

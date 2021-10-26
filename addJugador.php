@@ -33,11 +33,11 @@
         <div class="s-col-4 m-col-4 l-col-4 offset-by-4">
             <form action="controlador.php" method="post" class="form1">
                 <div class="row">
-                    <label class="s-col-6 m-col-6 l-col-6" for="email">Usuario</label>
+                    <label class="s-col-6 m-col-6 l-col-6" for="usuario">Usuario</label>
                     <input class="s-col-6 m-col-6 l-col-6" type="text" name="usuario" id="usuario" required minlength="3">
                 </div>
                 <div class="row">
-                    <label class="s-col-6 m-col-6 l-col-6" for="pass">Email</label>
+                    <label class="s-col-6 m-col-6 l-col-6" for="email">Email</label>
                     <input class="s-col-6 m-col-6 l-col-6" type="email" name="email" id="email" required minlength="5">
                 </div>
                 <div class="row">
@@ -47,6 +47,18 @@
                 <div class="row">
                     <label class="s-col-6 m-col-6 l-col-6" for="pass">Repite la contraseña</label>
                     <input class="s-col-6 m-col-6 l-col-6" type="password" name="pass" id="pass" required minlength="5">
+                </div>
+                <div class="row">
+                    <input class="s-col-1 m-col-1 l-col-1" type="radio" name="rol" id="" value="1" checked>
+                    <label class="s-col-6 m-col-6 l-col-6" for="jugador">Jugador</label>
+                </div>
+                <div class="row">
+                    <input class="s-col-1 m-col-1 l-col-1" type="radio" name="rol" id="" value="2">
+                    <label class="s-col-6 m-col-6 l-col-6" for="editor">Editor</label>
+                </div>
+                <div class="row">
+                    <input class="s-col-1 m-col-1 l-col-1" type="radio" name="rol" id="" value="3">
+                    <label class="s-col-6 m-col-6 l-col-6" for="admin">Admin</label>
                 </div>
                 <div class="row">
                     <div class="s-col-12 m-col-12 l-col-12">

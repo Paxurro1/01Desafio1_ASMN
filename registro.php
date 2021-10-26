@@ -48,7 +48,7 @@
     </div>
     <div class="row">
         <div class="s-col-3 m-col-3 l-col-3 offset-by-5">
-            <button class="button_1" onclick="window.location.href='index.php'">volver</button>
+            <button class="button_1" onclick="window.location.href='index.php'">Volver</button>
         </div>
     </div>
 </body>
