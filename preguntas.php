@@ -27,6 +27,7 @@
                 if ($p->getRol() == 2 || $p->getRol() == 3) {
                 ?>
                     <li><a href="preguntas.php">Crear pregunta</a></li>
+                    <li><a href="crudpreguntas.php">Editar pregunta</a></li>
                 <?php
                 }
                 if ($p->getRol() == 3) {
@@ -40,16 +41,41 @@
         </div>
     </div>
     <div class="row">
-        <div class="s-col-4 m-col-4 l-col-4 offset-by-4">
-            <form action="" method="post" class="form1">
+        <div class="s-col-8 m-col-6 l-col-6 soffset-by-2 moffset-by-3 loffset-by-3">
+            <form action="controlador.php" method="post" class="form1">
                 <div class="row">
-                    <textarea class="s-col-12 m-col-12 l-col-12" name="" id="" cols="30" rows="10" maxlength="400"></textarea>
+                    <label class="s-col-12 m-col-12 l-col-12" for="pregunta">Pregunta</label>
+                    <textarea class="s-col-12 m-col-12 l-col-12" name="pregunta" id="" cols="30" rows="10" maxlength="200"></textarea>
                 </div>
                 <div class="row">
-                    <input class="s-col-10 m-col-10 l-col-10" type="text" name="" id="">
-                    <input class="s-col-10 m-col-10 l-col-10" type="text" name="" id="">
-                    <input class="s-col-10 m-col-10 l-col-10" type="text" name="" id="">
-                    <input class="s-col-10 m-col-10 l-col-10" type="text" name="" id="">
+                    <div class="s-col-12 m-col-12 l-col-12">
+                        <div class="row">
+                            <label class="s-col-12 m-col-12 l-col-12" for="respuesta1">Respuesta 1</label>
+                            <input class="s-col-10 m-col-10 l-col-10" type="text" name="respuesta1" id="">
+                            <input type="radio" name="respuesta" id="" value="1" class="s-col-1 m-col-1 l-col-1" checked>
+                        </div>
+                    </div>
+                    <div class="s-col-12 m-col-12 l-col-12">
+                        <div class="row">
+                            <label class="s-col-12 m-col-12 l-col-12" for="respuesta2">Respuesta 2</label>
+                            <input class="s-col-10 m-col-10 l-col-10" type="text" name="respuesta2" id="">
+                            <input type="radio" name="respuesta" id="" value="2" class="s-col-1 m-col-1 l-col-1">
+                        </div>
+                    </div>
+                    <div class="s-col-12 m-col-12 l-col-12">
+                        <div class="row">
+                            <label class="s-col-12 m-col-12 l-col-12" for="respuesta3">Respuesta 3</label>
+                            <input class="s-col-10 m-col-10 l-col-10" type="text" name="respuesta3" id="">
+                            <input type="radio" name="respuesta" id="" value="3" class="s-col-1 m-col-1 l-col-1">
+                        </div>
+                    </div>
+                    <div class="s-col-12 m-col-12 l-col-12">
+                        <div class="row">
+                            <label class="s-col-12 m-col-12 l-col-12" for="respuesta4">Respuesta 4</label>
+                            <input class="s-col-10 m-col-10 l-col-10" type="text" name="respuesta4" id="">
+                            <input type="radio" name="respuesta" id="" value="4" class="s-col-1 m-col-1 l-col-1">
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="s-col-12 m-col-12 l-col-12">

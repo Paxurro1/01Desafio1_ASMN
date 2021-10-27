@@ -26,6 +26,7 @@
                 if ($p->getRol() == 2 || $p->getRol() == 3) {
                 ?>
                     <li><a href="preguntas.php">Crear pregunta</a></li>
+                    <li><a href="crudpreguntas.php">Editar pregunta</a></li>
                 <?php
                 }
                 if ($p->getRol() == 3) {

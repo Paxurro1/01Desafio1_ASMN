@@ -7,6 +7,9 @@
         font-weight:bold;
         display:inline-block;
     }
+    input[type="radio"]{
+        margin-top: 1em;
+    }
     input[type="text"],
     input[type="email"]{
         border:1px solid $color2;
