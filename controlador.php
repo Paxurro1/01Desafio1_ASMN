@@ -12,10 +12,10 @@ if (isset($_REQUEST['loging_index'])) {
     if ($recaptcha->score >= 0.7) {
         $jugador = Conexion::getPersona($_REQUEST['email'], $_REQUEST['pass']);
         if ($jugador != null) {
-            if($jugador->getActivo() == 1){
+            if ($jugador->getActivo() == 1) {
                 $_SESSION['jugador'] = $jugador;
                 header("Location:menu.php");
-            }else{
+            } else {
                 header("Location:index.php");
             }
         } else {
@@ -55,4 +55,32 @@ if (isset($_REQUEST['borrar'])) {
 if (isset($_REQUEST['editar'])) {
     Conexion::editarPersona($_REQUEST['email'], $_REQUEST['usuario'], $_REQUEST['activo'], $_REQUEST['rol']);
     header("Location:crud.php");
+}
+// AÑADIR PREGUNTA Y RESPUESTAS
+if (isset($_REQUEST['crear_pregunta'])) {
+    if ($_REQUEST['respuesta'] == 1) {
+        $respuesta = $_REQUEST['respuesta1'];
+    } else if ($_REQUEST['respuesta'] == 2) {
+        $respuesta = $_REQUEST['respuesta2'];
+    } else if ($_REQUEST['respuesta'] == 3) {
+        $respuesta = $_REQUEST['respuesta3'];
+    } else if ($_REQUEST['respuesta'] == 4) {
+        $respuesta = $_REQUEST['respuesta4'];
+    }
+    $p = new Pregunta(null, $_REQUEST['pregunta'], $respuesta);
+    Conexion::addPregunta($p);
+    $p = Conexion::getPregunta($p);
+    $respuesta = new Respuesta (null, $p->getId_pregunta(), $_REQUEST['respuesta1']);
+    Conexion::addRespuesta($respuesta);
+    $respuesta = new Respuesta (null, $p->getId_pregunta(), $_REQUEST['respuesta2']);
+    Conexion::addRespuesta($respuesta);
+    $respuesta = new Respuesta (null, $p->getId_pregunta(), $_REQUEST['respuesta3']);
+    Conexion::addRespuesta($respuesta);
+    $respuesta = new Respuesta (null, $p->getId_pregunta(), $_REQUEST['respuesta4']);
+    Conexion::addRespuesta($respuesta);
+    header("Location:preguntas.php");
+}
+//BORRAR PREGUNTA Y RESPUESTAS
+if(isset($_REQUEST['borrar_pregunta'])){
+    Conexion::
 }
