@@ -44,6 +44,7 @@ if (isset($_REQUEST['registro'])) {
     if ($recaptcha->score >= 0.7) {
         $p = new Persona($_REQUEST['email'], $_REQUEST['usuario'], $_REQUEST['pass'], null, 0, 0, 1);
         Conexion::addPersona($p);
+        $emailDestino = $_REQUEST['email'];
         $mail = new PHPMailer();
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
@@ -56,8 +57,8 @@ if (isset($_REQUEST['registro'])) {
         $mail->addAddress($emailDestino);
 
         $mail->isHTML(true);
-        $mail->Subject = 'Nueva contraseña';
-        $mail->Body = 'Tu nueva contraseña es: ' . $pass;
+        $mail->Subject = 'Confirmar correo';
+        $mail->Body = 'localhost/01Desafio_ASMN/activar.php?email=' . $emailDestino;
         $mail->send();
         header("Location:index.php");
     } else {

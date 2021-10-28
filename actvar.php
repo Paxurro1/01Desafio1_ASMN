@@ -28,6 +28,7 @@
             <div class="">
                 <div class="s-col-12 m-col-12 l-col-12">
                     <p>Tu cuenta ha sido activada correctamente</p>
+                    <a href="index.php">Ir al loging</a>
                 </div>
             </div>
         <?php
@@ -36,6 +37,7 @@
             <div class="">
                 <div class="s-col-12 m-col-12 l-col-12">
                     <p>Tu no ha sido activada</p>
+                    <a href="index.php">Ir al loging</a>
                 </div>
             </div>
         <?php
