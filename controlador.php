@@ -1,8 +1,15 @@
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+
 require_once 'Persona.php';
 require_once 'Conexion.php';
 require_once 'Pregunta.php';
 require_once 'Respuesta.php';
+require_once 'phpmailer/src/Exception.php';
+require_once 'phpmailer/src/PHPMailer.php';
+require_once 'phpmailer/src/SMTP.php';
 session_start();
 // EL LOGGING
 if (isset($_REQUEST['loging_index'])) {
@@ -72,24 +79,24 @@ if (isset($_REQUEST['crear_pregunta'])) {
     $p = new Pregunta(null, $_REQUEST['pregunta'], $respuesta);
     Conexion::addPregunta($p);
     $p = Conexion::getPreguntaTexto($p);
-    $respuesta = new Respuesta (null, $p->getId_pregunta(), $_REQUEST['respuesta1']);
+    $respuesta = new Respuesta(null, $p->getId_pregunta(), $_REQUEST['respuesta1']);
     Conexion::addRespuesta($respuesta);
-    $respuesta = new Respuesta (null, $p->getId_pregunta(), $_REQUEST['respuesta2']);
+    $respuesta = new Respuesta(null, $p->getId_pregunta(), $_REQUEST['respuesta2']);
     Conexion::addRespuesta($respuesta);
-    $respuesta = new Respuesta (null, $p->getId_pregunta(), $_REQUEST['respuesta3']);
+    $respuesta = new Respuesta(null, $p->getId_pregunta(), $_REQUEST['respuesta3']);
     Conexion::addRespuesta($respuesta);
-    $respuesta = new Respuesta (null, $p->getId_pregunta(), $_REQUEST['respuesta4']);
+    $respuesta = new Respuesta(null, $p->getId_pregunta(), $_REQUEST['respuesta4']);
     Conexion::addRespuesta($respuesta);
     header("Location:preguntas.php");
 }
 //BORRAR PREGUNTA Y RESPUESTAS
-if(isset($_REQUEST['borrar_pregunta'])){
+if (isset($_REQUEST['borrar_pregunta'])) {
     Conexion::borrarPregunta($_REQUEST['id_pregunta']);
     Conexion::borrarRespuestas($_REQUEST['id_pregunta']);
     header("Location:crudpreguntas.php");
 }
 //EDITAR PREGUNTA Y RESPUESTAS
-if(isset($_REQUEST['editar_pregunta'])){
+if (isset($_REQUEST['editar_pregunta'])) {
     if ($_REQUEST['verdadera'] == 1) {
         $respuesta = $_REQUEST['9'];
         //El primer campo es el id de la preunta, el segundo la misma preunta y el 3 su correspondiente solución
@@ -103,7 +110,7 @@ if(isset($_REQUEST['editar_pregunta'])){
     } else if ($_REQUEST['verdadera'] == 4) {
         $respuesta = $_REQUEST['12'];
         Conexion::editarPregunta($_REQUEST['id_pregunta'], $_REQUEST['pregunta'], $respuesta);
-    }else{
+    } else {
         //Hago esto por si no se ha seleccionado ninguna respuesta ponerle la que ya tenía antes
         $preg = Conexion::getPreguntaId($_REQUEST['id_pregunta']);
         Conexion::editarPregunta($_REQUEST['id_pregunta'], $_REQUEST['pregunta'], $preg->getRespuesta());
@@ -114,4 +121,45 @@ if(isset($_REQUEST['editar_pregunta'])){
     Conexion::editarRespuesta($_REQUEST['7'], $_REQUEST['11']);
     Conexion::editarRespuesta($_REQUEST['8'], $_REQUEST['12']);
     header("Location:crudpreguntas.php");
+}
+//NUEVA CONTRASEÑA
+if (isset($_REQUEST['nuevapass'])) {
+    $jugador = Conexion::getPersonaEmail($_REQUEST['correoDestino']);
+    var_dump($jugador);
+    if ($jugador != null) {
+        $emailDestino = $_REQUEST['correoDestino'];
+        switch (rand(1, 4)) {
+            case 1:
+                $pass = 'Firulais_' . rand(1000, 9999);
+                break;
+            case 2:
+                $pass = 'Estopa_' . rand(1000, 9999);
+                break;
+            case 3:
+                $pass = 'IlloJuan_' . rand(1000, 9999);
+                break;
+            case 4:
+                $pass = 'Knekro_' . rand(1000, 9999);
+                break;
+        }
+        $mail = new PHPMailer();
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'auxiliardaw2@gmail.com';
+        $mail->Password = 'Chubaca20';
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 587;
+        $mail->setFrom('AuxiliarDAW2@gmail.com');
+        $mail->addAddress($emailDestino);
+
+        $mail->isHTML(true);
+        $mail->Subject = 'Nueva contraseña';
+        $mail->Body = 'Tu nueva contraseña es: ' . $pass;
+        $mail->send();
+        Conexion::cambiarPass($emailDestino, $pass);
+        header("Location:index.php");
+    } else {
+        header("Location:recuperar.php");
+    }
 }

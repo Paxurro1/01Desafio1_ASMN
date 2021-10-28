@@ -44,7 +44,7 @@
     </div>
     <div class="row">
         <div class="s-col-3 m-col-3 l-col-3 offset-by-4">
-            <a href="">Recuperar contraseña</a>
+            <a href="recuperar.php">Nueva contraseña</a>
         </div>
         <div class="s-col-2 m-col-2 l-col-2">
             <a href="registro.php">Registrarme</a>

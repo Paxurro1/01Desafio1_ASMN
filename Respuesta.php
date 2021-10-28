@@ -47,7 +47,7 @@ class Respuesta {
         $cad .= '</div>';
         $cad .= '<div class="row">';
         //Este es el id de la pocion
-        $cad .= '<input class="s-col-2 m-col-2 l-col-2" required type="text" name="' . $opcion . '" value="' . $this->id_opcion . '">';
+        $cad .= '<input class="s-col-2 m-col-2 l-col-2" required type="text" name="' . $opcion . '" value="' . $this->id_opcion . '" readonly>';
         //Esta es la opción/respuesta
         $cad .= '<input class="s-col-8 m-col-8 l-col-8" required type="text" name="' . $opcion2 . '" value="' . $this->respuesta . '">';
         $valor = $this->respuesta == $pregunta->getRespuesta() ? ' checked ' : ' ';

@@ -265,4 +265,38 @@ class Conexion
         self::cerrarConexion();
         return $devolver;
     }
+
+    public static function getPersonaEmail($email)
+    {
+        self::abrirConexion();
+        $jugador = null;
+        $consulta = "SELECT * FROM jugador WHERE email = ?";
+        $stmt = mysqli_stmt_init(self::$conexion);
+        if (mysqli_stmt_prepare($stmt, $consulta)) {
+            mysqli_stmt_bind_param($stmt, "s", $email);
+            mysqli_stmt_execute($stmt);
+            $resultado = mysqli_stmt_get_result($stmt);
+            while ($fila = mysqli_fetch_array($resultado)) {
+                $jugador = new Persona($fila["email"], $fila["usuario"], $fila["pass"], $fila["foto"], $fila["activo"], $fila['victorias'], $fila['rol']);
+            }
+        }
+        self::cerrarConexion();
+        return $jugador;
+    }
+
+    public static function cambiarPass($email, $pass)
+    {
+        self::abrirConexion();
+        $fallo = 'No hay fallo';
+        $query = "UPDATE jugador SET pass = ? WHERE email = ?";
+        $stmt = mysqli_stmt_init(self::$conexion);
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, "ss", $pass, $email);
+            mysqli_stmt_execute($stmt);
+        } else {
+            $fallo = "Error al editar: " . mysqli_error(self::$conexion) . '<br/>';
+        }
+        self::cerrarConexion();
+        return $fallo;
+    }
 }

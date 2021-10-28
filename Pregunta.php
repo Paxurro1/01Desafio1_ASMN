@@ -27,7 +27,7 @@ class Pregunta {
     {
         $cad = '<div class="row">';
         $cad .= '<label class="s-col-5 m-col-5 l-col-5" for="id_pregunta">ID de la pregunta</label>';
-        $cad .= '<input class="s-col-2 m-col-2 l-col-2" type="text" name="id_pregunta" id=""  value="' . $this->id_pregunta . '">';
+        $cad .= '<input class="s-col-2 m-col-2 l-col-2" type="text" name="id_pregunta" id=""  value="' . $this->id_pregunta . '" readonly>';
         $cad .= '</div>';
         $cad .= '<div class="row">';
         $cad .= '<label class="s-col-4 m-col-4 l-col-4" for="pregunta">Pregunta</label>';
