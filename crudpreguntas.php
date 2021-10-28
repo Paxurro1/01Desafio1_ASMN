@@ -31,7 +31,7 @@
                 }
                 if ($p->getRol() == 3) {
                 ?>
-                    <li><a href="crud.php">Admin usuarios</a></li>
+                    <li><a href="crudusuarios.php">Admin usuarios</a></li>
                 <?php
                 }
                 ?>
