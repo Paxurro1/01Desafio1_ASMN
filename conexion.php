@@ -299,4 +299,20 @@ class Conexion
         self::cerrarConexion();
         return $fallo;
     }
+
+    public static function activarJugador($email)
+    {
+        self::abrirConexion();
+        $fallo = 'No hay fallo';
+        $query = "UPDATE jugador SET activo = 1 WHERE email = ?";
+        $stmt = mysqli_stmt_init(self::$conexion);
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, "s", $email);
+            mysqli_stmt_execute($stmt);
+        } else {
+            $fallo = "Error al editar: " . mysqli_error(self::$conexion) . '<br/>';
+        }
+        self::cerrarConexion();
+        return $fallo;
+    }
 }

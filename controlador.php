@@ -42,8 +42,23 @@ if (isset($_REQUEST['registro'])) {
     $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
     $recaptcha = json_decode($recaptcha);
     if ($recaptcha->score >= 0.7) {
-        $p = new Persona($_REQUEST['email'], $_REQUEST['usuario'], $_REQUEST['pass'], null, 1, 0, 1);
+        $p = new Persona($_REQUEST['email'], $_REQUEST['usuario'], $_REQUEST['pass'], null, 0, 0, 1);
         Conexion::addPersona($p);
+        $mail = new PHPMailer();
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'auxiliardaw2@gmail.com';
+        $mail->Password = 'Chubaca20';
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 587;
+        $mail->setFrom('AuxiliarDAW2@gmail.com');
+        $mail->addAddress($emailDestino);
+
+        $mail->isHTML(true);
+        $mail->Subject = 'Nueva contraseña';
+        $mail->Body = 'Tu nueva contraseña es: ' . $pass;
+        $mail->send();
         header("Location:index.php");
     } else {
         header("Location:registro.php");
@@ -125,7 +140,6 @@ if (isset($_REQUEST['editar_pregunta'])) {
 //NUEVA CONTRASEÑA
 if (isset($_REQUEST['nuevapass'])) {
     $jugador = Conexion::getPersonaEmail($_REQUEST['correoDestino']);
-    var_dump($jugador);
     if ($jugador != null) {
         $emailDestino = $_REQUEST['correoDestino'];
         switch (rand(1, 4)) {
