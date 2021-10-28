@@ -42,7 +42,6 @@ class Conexion
         self::abrirConexion();
         $fallo = 'No hay fallo';
         $query = "DELETE FROM jugador WHERE email = '$email'";
-        echo $query;
         if (mysqli_query(self::$conexion, $query)) {
         } else {
             $fallo = "Error al borrar: " . mysqli_error(self::$conexion) . '<br/>';
@@ -113,7 +112,7 @@ class Conexion
         return $fallo;
     }
 
-    public static function getPregunta($pregunta)
+    public static function getPreguntaTexto($pregunta)
     {
         self::abrirConexion();
         $devolver = null;
@@ -157,7 +156,7 @@ class Conexion
             $preguntas = [];
             while ($fila = mysqli_fetch_array($resultado)) {
                 $p = new Pregunta($fila["id_pregunta"], $fila["pregunta"], $fila["respuesta"]);
-                $preguntas [$p->getId_pregunta()] = $p;
+                $preguntas[$p->getId_pregunta()] = $p;
             }
         }
         self::cerrarConexion();
@@ -176,7 +175,7 @@ class Conexion
             $respuestas = [];
             while ($fila = mysqli_fetch_array($resultado)) {
                 $respuesta = new Respuesta($fila["id_opcion"], $fila["id_pregunta"], $fila["respuesta"]);
-                $respuestas [$respuesta->getId_opcion()] = $respuesta;
+                $respuestas[$respuesta->getId_opcion()] = $respuesta;
             }
         }
         self::cerrarConexion();
@@ -188,12 +187,82 @@ class Conexion
         self::abrirConexion();
         $fallo = 'No hay fallo';
         $query = "DELETE FROM pregunta WHERE id_pregunta = ?";
-        echo $query;
-        if (mysqli_query(self::$conexion, $query)) {
+        $stmt = mysqli_stmt_init(self::$conexion);
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, "i", $id);
+            mysqli_stmt_execute($stmt);
         } else {
             $fallo = "Error al borrar: " . mysqli_error(self::$conexion) . '<br/>';
         }
         self::cerrarConexion();
         return $fallo;
+    }
+
+    public static function borrarRespuestas($id)
+    {
+        self::abrirConexion();
+        $fallo = 'No hay fallo';
+        $query = "DELETE FROM opciones WHERE id_pregunta = ?";
+        $stmt = mysqli_stmt_init(self::$conexion);
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, "i", $id);
+            mysqli_stmt_execute($stmt);
+        } else {
+            $fallo = "Error al borrar: " . mysqli_error(self::$conexion) . '<br/>';
+        }
+        self::cerrarConexion();
+        return $fallo;
+    }
+
+    public static function editarPregunta($id, $pregunta, $respuesta)
+    {
+        self::abrirConexion();
+        $fallo = 'No hay fallo';
+        $query = "UPDATE pregunta SET pregunta = ?, respuesta = ? WHERE id_pregunta = ?";
+        $stmt = mysqli_stmt_init(self::$conexion);
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, "ssi", $pregunta, $respuesta, $id);
+            mysqli_stmt_execute($stmt);
+        } else {
+            $fallo = "Error al editar: " . mysqli_error(self::$conexion) . '<br/>';
+        }
+        self::cerrarConexion();
+        return $fallo;
+    }
+
+    public static function editarRespuesta($id, $respuesta)
+    {
+        self::abrirConexion();
+        $fallo = 'No hay fallo';
+        $query = "UPDATE opciones SET respuesta = ? WHERE id_opcion = ?";
+        $stmt = mysqli_stmt_init(self::$conexion);
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, "si", $respuesta, $id);
+            mysqli_stmt_execute($stmt);
+        } else {
+            $fallo = "Error al editar: " . mysqli_error(self::$conexion) . '<br/>';
+        }
+        self::cerrarConexion();
+        return $fallo;
+    }
+
+    public static function getPreguntaId($id)
+    {
+        self::abrirConexion();
+        $devolver = null;
+        $query = "SELECT * FROM pregunta WHERE id_pregunta = ?";
+        $stmt = mysqli_stmt_init(self::$conexion);
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, "i", $id);
+            mysqli_stmt_execute($stmt);
+            $resultado = mysqli_stmt_get_result($stmt);
+            while ($fila = mysqli_fetch_array($resultado)) {
+                $devolver = new Pregunta($fila["id_pregunta"], $fila["pregunta"], $fila["respuesta"]);
+            }
+        } else {
+            $fallo = "Error al obtener registro: " . mysqli_error(self::$conexion) . '<br/>';
+        }
+        self::cerrarConexion();
+        return $devolver;
     }
 }

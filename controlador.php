@@ -1,6 +1,8 @@
 <?php
 require_once 'Persona.php';
 require_once 'Conexion.php';
+require_once 'Pregunta.php';
+require_once 'Respuesta.php';
 session_start();
 // EL LOGGING
 if (isset($_REQUEST['loging_index'])) {
@@ -49,12 +51,12 @@ if (isset($_REQUEST['addJugador'])) {
 // BORRADO
 if (isset($_REQUEST['borrar'])) {
     Conexion::borrarPersona($_REQUEST['email']);
-    header("Location:crud.php");
+    header("Location:crudusuarios.php");
 }
 // EDITAR
 if (isset($_REQUEST['editar'])) {
     Conexion::editarPersona($_REQUEST['email'], $_REQUEST['usuario'], $_REQUEST['activo'], $_REQUEST['rol']);
-    header("Location:crud.php");
+    header("Location:crudusuarios.php");
 }
 // AÑADIR PREGUNTA Y RESPUESTAS
 if (isset($_REQUEST['crear_pregunta'])) {
@@ -69,7 +71,7 @@ if (isset($_REQUEST['crear_pregunta'])) {
     }
     $p = new Pregunta(null, $_REQUEST['pregunta'], $respuesta);
     Conexion::addPregunta($p);
-    $p = Conexion::getPregunta($p);
+    $p = Conexion::getPreguntaTexto($p);
     $respuesta = new Respuesta (null, $p->getId_pregunta(), $_REQUEST['respuesta1']);
     Conexion::addRespuesta($respuesta);
     $respuesta = new Respuesta (null, $p->getId_pregunta(), $_REQUEST['respuesta2']);
@@ -82,5 +84,34 @@ if (isset($_REQUEST['crear_pregunta'])) {
 }
 //BORRAR PREGUNTA Y RESPUESTAS
 if(isset($_REQUEST['borrar_pregunta'])){
-    Conexion::
+    Conexion::borrarPregunta($_REQUEST['id_pregunta']);
+    Conexion::borrarRespuestas($_REQUEST['id_pregunta']);
+    header("Location:crudpreguntas.php");
+}
+//EDITAR PREGUNTA Y RESPUESTAS
+if(isset($_REQUEST['editar_pregunta'])){
+    if ($_REQUEST['verdadera'] == 1) {
+        $respuesta = $_REQUEST['9'];
+        //El primer campo es el id de la preunta, el segundo la misma preunta y el 3 su correspondiente solución
+        Conexion::editarPregunta($_REQUEST['id_pregunta'], $_REQUEST['pregunta'], $respuesta);
+    } else if ($_REQUEST['verdadera'] == 2) {
+        $respuesta = $_REQUEST['10'];
+        Conexion::editarPregunta($_REQUEST['id_pregunta'], $_REQUEST['pregunta'], $respuesta);
+    } else if ($_REQUEST['verdadera'] == 3) {
+        $respuesta = $_REQUEST['11'];
+        Conexion::editarPregunta($_REQUEST['id_pregunta'], $_REQUEST['pregunta'], $respuesta);
+    } else if ($_REQUEST['verdadera'] == 4) {
+        $respuesta = $_REQUEST['12'];
+        Conexion::editarPregunta($_REQUEST['id_pregunta'], $_REQUEST['pregunta'], $respuesta);
+    }else{
+        //Hago esto por si no se ha seleccionado ninguna respuesta ponerle la que ya tenía antes
+        $preg = Conexion::getPreguntaId($_REQUEST['id_pregunta']);
+        Conexion::editarPregunta($_REQUEST['id_pregunta'], $_REQUEST['pregunta'], $preg->getRespuesta());
+    }
+    //El primer campo es el id de la respuesta, el segundo es el contenido de la misma respuesta
+    Conexion::editarRespuesta($_REQUEST['5'], $_REQUEST['9']);
+    Conexion::editarRespuesta($_REQUEST['6'], $_REQUEST['10']);
+    Conexion::editarRespuesta($_REQUEST['7'], $_REQUEST['11']);
+    Conexion::editarRespuesta($_REQUEST['8'], $_REQUEST['12']);
+    header("Location:crudpreguntas.php");
 }

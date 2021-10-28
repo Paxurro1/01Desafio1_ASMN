@@ -53,12 +53,15 @@
                 <div class="row">
                     <button class="button_1 s-col-12 m-col-12 l-col-12" onclick="window.location.href='preguntas.php'">Crear pregunta</button>
                 </div>
+                <div class="row">
+                    <button class="button_1 s-col-12 m-col-12 l-col-12" onclick="window.location.href='crudpreguntas.php'">Editar preguntas</button>
+                </div>
             <?php
             }
             if ($p->getRol() == 3) {
             ?>
                 <div class="row">
-                    <button class="button_1 s-col-12 m-col-12 l-col-12" onclick="window.location.href='crud.php'">Editar jugadores</button>
+                    <button class="button_1 s-col-12 m-col-12 l-col-12" onclick="window.location.href='crudusuarios.php'">Editar jugadores</button>
                 </div>
             <?php
             }

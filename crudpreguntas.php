@@ -52,10 +52,17 @@
                 echo '<div class="s-col-12 m-col-6 l-col-4">';
                 echo '<form class="form1" action="controlador.php" method="post">' . $ele->__toString();
                 echo '<div class="row">';
+                //Este contador es para darle valores al radio
                 $cont = 1;
+                //Este contador es para darle nombre a la ID de la  opción
+                $cont2 = 5;
+                //Este contador es para darle nombre a la opción
+                $cont3 = 9;
                 foreach ($respuestas as $ele) {
-                    echo $ele->__toString2($cont);
+                    echo $ele->__toString2($cont, $cont2, $cont3);
                     $cont++;
+                    $cont2++;
+                    $cont3++;
                 }
                 echo '</div>';
                 echo '<div class="row">';
