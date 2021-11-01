@@ -23,7 +23,7 @@
         </div>
     </header>
     <div class="row">
-        <div class="s-col-4 m-col-4 l-col-4 offset-by-4">
+        <div class="s-col-8 m-col-6 l-col-4 soffset-by-2 moffset-by-3 loffset-by-4">
             <form action="controlador.php" method="post" class="form1" id="formulario_loging">
                 <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                 <div class="row">
@@ -43,10 +43,10 @@
         </div>
     </div>
     <div class="row">
-        <div class="s-col-3 m-col-3 l-col-3 offset-by-4">
+        <div class="s-col-4 m-col-3 l-col-2 soffset-by-2 moffset-by-3 loffset-by-4">
             <a href="recuperar.php">Nueva contraseña</a>
         </div>
-        <div class="s-col-2 m-col-2 l-col-2">
+        <div class="s-col-2 m-col-1 l-col-1 soffset-by-2 moffset-by-1 loffset-by-1">
             <a href="registro.php">Registrarme</a>
         </div>
     </div>

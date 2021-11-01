@@ -413,10 +413,45 @@ body {
 }
 
 .cabecera1 h1 {
-  text-shadow: #4444eb 5px 4px 8px;
+  text-shadow: black 5px 4px 8px;
   text-align: center;
   color: #8d4925;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+.cabecera1 h2 {
+  text-shadow: black 5px 4px 8px;
+  text-align: center;
+  color: #8d4925;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+.cabecera1 h3 {
+  text-shadow: black 5px 4px 8px;
+  text-align: center;
+  color: #8d4925;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+.cabecera1 h4 {
+  text-shadow: black 5px 4px 8px;
+  text-align: center;
+  color: #8d4925;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+.cabecera1 h5 {
+  text-shadow: black 5px 4px 8px;
+  text-align: center;
+  color: #8d4925;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+.cabecera1 h6 {
+  text-shadow: black 5px 4px 8px;
+  text-align: center;
+  color: #8d4925;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
 .table1 {

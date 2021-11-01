@@ -58,7 +58,7 @@ if (isset($_REQUEST['registro'])) {
 
         $mail->isHTML(true);
         $mail->Subject = 'Confirmar correo';
-        $mail->Body = 'localhost/01Desafio_ASMN/activar.php?email=' . $emailDestino;
+        $mail->Body = '<a href="localhost/01Desafio1_ASMN/activar.php?email=' . $emailDestino .'">Pulsa el enlace para activar el usuario</a>';
         $mail->send();
         header("Location:index.php");
     } else {

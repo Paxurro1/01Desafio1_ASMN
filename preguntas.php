@@ -85,6 +85,14 @@
             </form>
         </div>
     </div>
+    <div class="row">
+        <div class="s-col-2 m-col-2 l-col-2 offset-by-3">
+            <button class="button_2" onclick="window.location.href='crudpreguntas.php'">Volver al editro</button>
+        </div>
+        <div class="s-col-2 m-col-2 l-col-2 offset-by-3 moffset-by-1 loffset-by-1">
+            <button class="button_2" onclick="window.location.href='menu.php'">Volver al menú</button>
+        </div>
+    </div>
 </body>
 
 </html>

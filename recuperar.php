@@ -16,7 +16,7 @@
         </div>
     </header>
     <div class="row">
-    <div class="s-col-4 m-col-4 l-col-4 offset-by-4">
+        <div class="s-col-8 m-col-6 l-col-4 soffset-by-2 moffset-by-3 loffset-by-4">
             <form action="controlador.php" method="post" class="form1" id="formulario_recuperar">
                 <div class="row">
                     <label class="s-col-6 m-col-6 l-col-6" for="email">Introduce tu email</label>
@@ -28,6 +28,11 @@
                     </div>
                 </div>
             </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="s-col-2 m-col-2 l-col-2 offset-by-5">
+            <button class="button_2" onclick="window.location.href='index.php'">Volver al loging</button>
         </div>
     </div>
 </body>

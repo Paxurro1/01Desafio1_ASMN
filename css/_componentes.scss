@@ -1,4 +1,4 @@
-body{
+body {
     background-image: url("./../images/barco.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -49,11 +49,13 @@ body{
         }
     }
 }
-.cabecera1{
-    h1{
-        text-shadow: rgb(68, 68, 235) 5px 4px 8px;
-        text-align: center;
-        color: $marron3;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.cabecera1 {
+    @for $i from 1 through 6 {
+        h#{$i} {
+            text-shadow: black 5px 4px 8px;
+            text-align: center;
+            color: $marron3;
+            font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        }
     }
 }

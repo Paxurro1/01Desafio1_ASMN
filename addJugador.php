@@ -11,9 +11,6 @@
 </head>
 
 <body>
-    <?php
-    session_start();
-    ?>
     <header class="row cabecera1">
         <div class="s-col-12 m-col-12 l-col-12">
             <h1>ATAKEBUNE</h1>
