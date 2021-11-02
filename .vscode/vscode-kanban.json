@@ -3,25 +3,64 @@
   "in-progress": [
     {
       "assignedTo": {
-        "name": "alvar"
+        "name": "Alvaro"
       },
-      "creation_time": "2021-10-19T10:45:29.530Z",
-      "id": "4",
+      "creation_time": "2021-11-02T07:56:09.380Z",
+      "id": "10",
       "references": [],
-      "title": "BD"
+      "title": "Validación"
+    }
+  ],
+  "testing": [],
+  "done": [
+    {
+      "assignedTo": {
+        "name": "Alvaro"
+      },
+      "creation_time": "2021-11-02T07:55:29.448Z",
+      "id": "9",
+      "references": [],
+      "title": "Añadir preguntas"
+    },
+    {
+      "assignedTo": {
+        "name": "Alvaro"
+      },
+      "creation_time": "2021-11-02T07:55:15.570Z",
+      "id": "8",
+      "references": [],
+      "title": "Confirmar correo"
     },
     {
       "assignedTo": {
         "name": "alvar"
       },
-      "creation_time": "2021-10-19T10:46:46.969Z",
+      "creation_time": "2021-10-19T10:45:22.679Z",
+      "id": "3",
+      "references": [],
+      "title": "CRUD"
+    },
+    {
+      "assignedTo": {
+        "name": "Alvaro"
+      },
+      "creation_time": "2021-11-02T07:54:57.147Z",
+      "id": "7",
+      "references": [],
+      "title": "CRUD de preguntas"
+    },
+    {
+      "assignedTo": {
+        "name": "alvar"
+      },
+      "creation_time": "2021-10-19T10:44:28.557Z",
       "description": {
-        "content": "la clase conexion con la base de datos",
+        "content": "el logging",
         "mime": "text/markdown"
       },
-      "id": "5",
+      "id": "1",
       "references": [],
-      "title": "Conexion"
+      "title": "index"
     },
     {
       "assignedTo": {
@@ -40,31 +79,6 @@
       "id": "2",
       "references": [],
       "title": "registro"
-    }
-  ],
-  "testing": [],
-  "done": [
-    {
-      "assignedTo": {
-        "name": "alvar"
-      },
-      "creation_time": "2021-10-19T10:45:22.679Z",
-      "id": "3",
-      "references": [],
-      "title": "CRUD"
-    },
-    {
-      "assignedTo": {
-        "name": "alvar"
-      },
-      "creation_time": "2021-10-19T10:44:28.557Z",
-      "description": {
-        "content": "el logging",
-        "mime": "text/markdown"
-      },
-      "id": "1",
-      "references": [],
-      "title": "index"
     }
   ]
 }
