@@ -23,6 +23,7 @@ if (isset($_REQUEST['loging_index'])) {
         if ($jugador != null) {
             if ($jugador->getActivo() == 1) {
                 $_SESSION['jugador'] = $jugador;
+                Conexion::conectarJugador($_REQUEST['email']);
                 header("Location:menu.php");
             } else {
                 header("Location:index.php");
@@ -42,7 +43,7 @@ if (isset($_REQUEST['registro'])) {
     $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
     $recaptcha = json_decode($recaptcha);
     if ($recaptcha->score >= 0.7) {
-        $p = new Persona($_REQUEST['email'], $_REQUEST['usuario'], $_REQUEST['pass'], null, 0, 0, 1);
+        $p = new Persona($_REQUEST['email'], $_REQUEST['usuario'], $_REQUEST['pass'], null, 0, 0, 1, 0);
         Conexion::addPersona($p);
         $emailDestino = $_REQUEST['email'];
         $mail = new PHPMailer();
@@ -67,7 +68,7 @@ if (isset($_REQUEST['registro'])) {
 }
 // ADD USUARIO DESDE CRUD
 if (isset($_REQUEST['addJugador'])) {
-    $p = new Persona($_REQUEST['email'], $_REQUEST['usuario'], $_REQUEST['pass'], null, 1, 0, $_REQUEST['rol']);
+    $p = new Persona($_REQUEST['email'], $_REQUEST['usuario'], $_REQUEST['pass'], null, 1, 0, $_REQUEST['rol'], 0);
     Conexion::addPersona($p);
     header("Location:addJugador.php");
 }
@@ -177,4 +178,11 @@ if (isset($_REQUEST['nuevapass'])) {
     } else {
         header("Location:recuperar.php");
     }
+}
+
+if (isset($_REQUEST['cerrar_sesion'])) {
+    $p = $_SESSION['jugador'];
+    Conexion::desconectarJugador($p->getEmail());
+    unset($_SESSION);
+    header("Location:index.php");
 }

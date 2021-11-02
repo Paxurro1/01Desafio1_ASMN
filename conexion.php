@@ -74,7 +74,7 @@ class Conexion
             mysqli_stmt_execute($stmt);
             $resultado = mysqli_stmt_get_result($stmt);
             while ($fila = mysqli_fetch_array($resultado)) {
-                $jugador = new Persona($fila["email"], $fila["usuario"], $fila["pass"], $fila["foto"], $fila["activo"], $fila['victorias'], $fila['rol']);
+                $jugador = new Persona($fila["email"], $fila["usuario"], $fila["pass"], $fila["foto"], $fila["activo"], $fila['victorias'], $fila['rol'], $fila['conectado']);
             }
         }
         self::cerrarConexion();
@@ -88,7 +88,7 @@ class Conexion
         if ($resultado = mysqli_query(self::$conexion, $consulta)) {
             $jugadores = [];
             while ($fila = mysqli_fetch_array($resultado)) {
-                $p = new Persona($fila["email"], $fila["usuario"], $fila["pass"], $fila["foto"], $fila["activo"], $fila['victorias'], $fila['rol']);
+                $p = new Persona($fila["email"], $fila["usuario"], $fila["pass"], $fila["foto"], $fila["activo"], $fila['victorias'], $fila['rol'], $fila['conectado']);
                 $jugadores[$p->getEmail()] = $p;
             }
         }
@@ -277,7 +277,7 @@ class Conexion
             mysqli_stmt_execute($stmt);
             $resultado = mysqli_stmt_get_result($stmt);
             while ($fila = mysqli_fetch_array($resultado)) {
-                $jugador = new Persona($fila["email"], $fila["usuario"], $fila["pass"], $fila["foto"], $fila["activo"], $fila['victorias'], $fila['rol']);
+                $jugador = new Persona($fila["email"], $fila["usuario"], $fila["pass"], $fila["foto"], $fila["activo"], $fila['victorias'], $fila['rol'], $fila['conectado']);
             }
         }
         self::cerrarConexion();
@@ -311,6 +311,38 @@ class Conexion
             mysqli_stmt_execute($stmt);
         } else {
             $fallo = "Error al editar: " . mysqli_error(self::$conexion) . '<br/>';
+        }
+        self::cerrarConexion();
+        return $fallo;
+    }
+
+    public static function conectarJugador($email)
+    {
+        self::abrirConexion();
+        $fallo = 'No hay fallo';
+        $query = "UPDATE jugador SET conectado = 1 WHERE email = ?";
+        $stmt = mysqli_stmt_init(self::$conexion);
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, "s", $email);
+            mysqli_stmt_execute($stmt);
+        } else {
+            $fallo = "Error al conectar: " . mysqli_error(self::$conexion) . '<br/>';
+        }
+        self::cerrarConexion();
+        return $fallo;
+    }
+
+    public static function desconectarJugador($email)
+    {
+        self::abrirConexion();
+        $fallo = 'No hay fallo';
+        $query = "UPDATE jugador SET conectado = 0 WHERE email = ?";
+        $stmt = mysqli_stmt_init(self::$conexion);
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, "s", $email);
+            mysqli_stmt_execute($stmt);
+        } else {
+            $fallo = "Error al conectar: " . mysqli_error(self::$conexion) . '<br/>';
         }
         self::cerrarConexion();
         return $fallo;

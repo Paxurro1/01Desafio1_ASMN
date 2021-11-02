@@ -36,7 +36,7 @@
                 <?php
                 }
                 ?>
-                <li><a href="index.php">Cerrar</a></li>
+                <li><a href="controlador.php?cerrar_sesion">Cerrar sesión</a></li>
             </ul>
         </div>
     </div>

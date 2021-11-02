@@ -7,8 +7,9 @@ class Persona {
     private $activo;
     private $victorias;
     private $rol;
+    private $conectado;
 
-    public function __construct($email, $usuario, $pass, $foto, $activo, $victorias, $rol)
+    public function __construct($email, $usuario, $pass, $foto, $activo, $victorias, $rol, $conectado)
     {
         $this->email = $email;
         $this->usuario = $usuario;
@@ -17,6 +18,7 @@ class Persona {
         $this->activo = $activo;
         $this->victorias = $victorias;
         $this->rol = $rol;
+        $this->conectado = $conectado;
     }
     
     function getUsuario() {
@@ -41,6 +43,14 @@ class Persona {
 
     function getRol() {
         return $this->rol;
+    }
+
+    function setConectado($conectado): void {
+        $this->conectado = $conectado;
+    }
+
+    function getConectado() {
+        return $this->conectado;
     }
 
     function setRol($rol): void {

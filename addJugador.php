@@ -36,7 +36,7 @@
                 <?php
                 }
                 ?>
-                <li><a href="index.php">Cerrar</a></li>
+                <li><a href="controlador.php?cerrar_sesion">Cerrar sesión</a></li>
             </ul>
         </div>
     </div>
@@ -81,7 +81,7 @@
     </div>
     <div class="row">
         <div class="s-col-3 m-col-3 l-col-3 offset-by-5">
-                <button class="button_1" onclick="window.location.href='crud.php'">volver</button>
+            <button class="button_1" onclick="window.location.href='crud.php'">volver</button>
         </div>
     </div>
 </body>
