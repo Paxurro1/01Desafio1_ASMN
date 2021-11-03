@@ -46,16 +46,16 @@
                     <?php
                     require_once 'Persona.php';
                     require_once 'Conexion.php';
-                    $personas = Conexion::getRanking();
-                    echo '<table class="table1">';
+                    $personas = Conexion::getConectados();
+                    echo '<table class="table2">';
                     echo '<tr>';
                     echo '<th>Usuario</th>';
-                    echo '<th>Victorias</th>';
+                    echo '<th>Conectado</th>';
                     echo '</tr>';
                     foreach ($personas as $ele) {
                         echo '<tr>';
                         echo '<td>'.$ele->getUsuario().'</td>';
-                        echo '<td>'.$ele->getVictorias().'</td>';
+                        echo '<td>Conectado</td>';
                         echo '</tr>';
                     }
                     echo '</table>';

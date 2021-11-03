@@ -21,6 +21,7 @@
             <ul>
                 <li><a href="menu.php">Menu</a></li>
                 <li><a href="ranking.php">Ranking</a></li>
+                <li><a href="conectados.php">Usuarios Conectados</a></li>
                 <?php
                 require_once 'Persona.php';
                 session_start();
