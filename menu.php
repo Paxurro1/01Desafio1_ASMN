@@ -19,6 +19,7 @@
         <div class="s-col-12 m-col-12 l-col-12 nav-horizontal">
             <ul>
                 <li><a href="menu.php">Menu</a></li>
+                <li><a href="ranking.php">Ranking</a></li>
                 <?php
                 require_once 'Persona.php';
                 session_start();
@@ -47,6 +48,9 @@
             <div class="row">
                 <button class="button_1 s-col-12 m-col-12 l-col-12">Crear una sala</button>
             </div>
+            <div class="row">
+                    <button class="button_1 s-col-12 m-col-12 l-col-12" onclick="window.location.href='ranking.php'">Ranking</button>
+                </div>
             <?php
             if ($p->getRol() == 2 || $p->getRol() == 3) {
             ?>

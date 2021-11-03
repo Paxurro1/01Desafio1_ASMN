@@ -347,4 +347,19 @@ class Conexion
         self::cerrarConexion();
         return $fallo;
     }
+
+    public static function getRanking()
+    {
+        self::abrirConexion();
+        $consulta = "SELECT * FROM jugador ORDER BY victorias DESC";
+        if ($resultado = mysqli_query(self::$conexion, $consulta)) {
+            $jugadores = [];
+            while ($fila = mysqli_fetch_array($resultado)) {
+                $p = new Persona($fila["email"], $fila["usuario"], $fila["pass"], $fila["foto"], $fila["activo"], $fila['victorias'], $fila['rol'], $fila['conectado']);
+                $jugadores[$p->getEmail()] = $p;
+            }
+        }
+        self::cerrarConexion();
+        return $jugadores;
+    }
 }

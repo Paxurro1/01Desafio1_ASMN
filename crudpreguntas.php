@@ -19,6 +19,7 @@
         <div class="s-col-12 m-col-12 l-col-12 nav-horizontal">
             <ul>
                 <li><a href="menu.php">Menu</a></li>
+                <li><a href="ranking.php">Ranking</a></li>
                 <?php
                 require_once 'Persona.php';
                 session_start();
