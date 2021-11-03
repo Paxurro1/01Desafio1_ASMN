@@ -12,7 +12,7 @@
     <script src="js/validacion.js"></script>
 </head>
 
-<body>
+<body onload="validacionIndex()">
     <?php
     session_start();
     $_SESSION['volver'] = 'index';
@@ -24,15 +24,17 @@
     </header>
     <div class="row">
         <div class="s-col-8 m-col-6 l-col-4 soffset-by-2 moffset-by-3 loffset-by-4">
-            <form action="controlador.php" method="post" class="form1" id="formulario_loging">
+            <form action="controlador.php" method="post" class="form1" id="formulario_loging" novalidate>
                 <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                 <div class="row">
                     <label class="s-col-6 m-col-6 l-col-6" for="email">Email</label>
-                    <input class="s-col-6 m-col-6 l-col-6" type="email" name="email" id="" required minlength="5">
+                    <input class="s-col-6 m-col-6 l-col-6" type="email" name="email" id="email" required minlength="5">
+                    <span class="error s-col-12 m-col-12 l-col-12" aria-live="polite"></span>
                 </div>
                 <div class="row">
                     <label class="s-col-6 m-col-6 l-col-6" for="pass">Contraseña</label>
-                    <input class="s-col-6 m-col-6 l-col-6" type="password" name="pass" id="" required minlength="5">
+                    <input class="s-col-6 m-col-6 l-col-6" type="password" name="pass" id="pass" required minlength="5">
+                    <span class="error s-col-12 m-col-12 l-col-12" aria-live="polite"></span>
                 </div>
                 <div class="row">
                     <div class="s-col-12 m-col-12 l-col-12">

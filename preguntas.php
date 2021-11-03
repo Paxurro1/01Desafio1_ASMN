@@ -10,7 +10,7 @@
     <script src="js/validacion.js"></script>
 </head>
 
-<body>
+<body onload="validacionPregunta()">
     <header class="row cabecera1">
         <div class="s-col-12 m-col-12 l-col-12">
             <h1>ATAKEBUNE</h1>
@@ -42,37 +42,42 @@
     </div>
     <div class="row">
         <div class="s-col-8 m-col-6 l-col-6 soffset-by-2 moffset-by-3 loffset-by-3">
-            <form action="controlador.php" method="post" class="form1">
+            <form action="controlador.php" method="post" class="form1" novalidate id="formulario_pregunta" novalidate>
                 <div class="row">
                     <label class="s-col-12 m-col-12 l-col-12" for="pregunta">Pregunta</label>
-                    <textarea class="s-col-12 m-col-12 l-col-12" name="pregunta" id="" cols="30" rows="10" maxlength="200"></textarea>
+                    <textarea class="s-col-12 m-col-12 l-col-12" name="pregunta" id="pregunta" cols="30" rows="10" required minlength="2" maxlength="200"></textarea>
+                    <span class="error" aria-live="polite"></span>
                 </div>
                 <div class="row">
                     <div class="s-col-12 m-col-12 l-col-12">
                         <div class="row">
                             <label class="s-col-12 m-col-12 l-col-12" for="respuesta1">Respuesta 1</label>
-                            <input class="s-col-10 m-col-10 l-col-10" type="text" name="respuesta1" id="">
+                            <input class="s-col-10 m-col-10 l-col-10" type="text" name="respuesta1" required minlength="1" maxlength="50" id="respuesta1">
+                            <span class="error" aria-live="polite"></span>
                             <input type="radio" name="respuesta" id="" value="1" class="s-col-1 m-col-1 l-col-1" checked>
                         </div>
                     </div>
                     <div class="s-col-12 m-col-12 l-col-12">
                         <div class="row">
                             <label class="s-col-12 m-col-12 l-col-12" for="respuesta2">Respuesta 2</label>
-                            <input class="s-col-10 m-col-10 l-col-10" type="text" name="respuesta2" id="">
+                            <input class="s-col-10 m-col-10 l-col-10" type="text" name="respuesta2" required minlength="1" maxlength="50" id="respuesta2">
+                            <span class="error" aria-live="polite"></span>
                             <input type="radio" name="respuesta" id="" value="2" class="s-col-1 m-col-1 l-col-1">
                         </div>
                     </div>
                     <div class="s-col-12 m-col-12 l-col-12">
                         <div class="row">
                             <label class="s-col-12 m-col-12 l-col-12" for="respuesta3">Respuesta 3</label>
-                            <input class="s-col-10 m-col-10 l-col-10" type="text" name="respuesta3" id="">
+                            <input class="s-col-10 m-col-10 l-col-10" type="text" name="respuesta3" required minlength="1" maxlength="50" id="respuesta3">
+                            <span class="error" aria-live="polite"></span>
                             <input type="radio" name="respuesta" id="" value="3" class="s-col-1 m-col-1 l-col-1">
                         </div>
                     </div>
                     <div class="s-col-12 m-col-12 l-col-12">
                         <div class="row">
                             <label class="s-col-12 m-col-12 l-col-12" for="respuesta4">Respuesta 4</label>
-                            <input class="s-col-10 m-col-10 l-col-10" type="text" name="respuesta4" id="">
+                            <input class="s-col-10 m-col-10 l-col-10" type="text" name="respuesta4" required minlength="1" maxlength="50" id="respuesta4">
+                            <span class="error" aria-live="polite"></span>
                             <input type="radio" name="respuesta" id="" value="4" class="s-col-1 m-col-1 l-col-1">
                         </div>
                     </div>

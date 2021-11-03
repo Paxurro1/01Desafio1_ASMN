@@ -31,7 +31,7 @@ class Pregunta {
         $cad .= '</div>';
         $cad .= '<div class="row">';
         $cad .= '<label class="s-col-4 m-col-4 l-col-4" for="pregunta">Pregunta</label>';
-        $cad .= '<textarea class="s-col-12 m-col-12 l-col-12" name="pregunta" id="" cols="30" rows="10" maxlength="200">' . $this->pregunta . '</textarea>';
+        $cad .= '<textarea class="s-col-12 m-col-12 l-col-12" name="pregunta" cols="30" rows="10" required minlength="2" maxlength="200">' . $this->pregunta . '</textarea>';
         $cad .= '</div>';
         return $cad;
     }

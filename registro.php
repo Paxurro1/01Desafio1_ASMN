@@ -12,7 +12,7 @@
     <script src="js/validacion.js"></script>
 </head>
 
-<body>
+<body onload="validacionRegistro()">
     <header class="row cabecera1">
         <div class="s-col-12 m-col-12 l-col-12">
             <h1>ATAKEBUNE</h1>
@@ -20,23 +20,27 @@
     </header>
     <div class="row">
         <div class="s-col-4 m-col-4 l-col-4 offset-by-4">
-            <form action="controlador.php" method="post" class="form1" id="formulario_registro">
+            <form action="controlador.php" method="post" class="form1" id="formulario_registro" novalidate>
                 <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                 <div class="row">
-                    <label class="s-col-6 m-col-6 l-col-6" for="email">Usuario</label>
+                    <label class="s-col-6 m-col-6 l-col-6" for="usuario">Usuario</label>
                     <input class="s-col-6 m-col-6 l-col-6" type="text" name="usuario" id="usuario" required minlength="3">
+                    <span class="error s-col-12 m-col-12 l-col-12" aria-live="polite"></span>
                 </div>
                 <div class="row">
-                    <label class="s-col-6 m-col-6 l-col-6" for="pass">Email</label>
+                    <label class="s-col-6 m-col-6 l-col-6" for="email">Email</label>
                     <input class="s-col-6 m-col-6 l-col-6" type="email" name="email" id="email" required minlength="5">
+                    <span class="error s-col-12 m-col-12 l-col-12" aria-live="polite"></span>
                 </div>
                 <div class="row">
                     <label class="s-col-6 m-col-6 l-col-6" for="pass">Contraseña</label>
                     <input class="s-col-6 m-col-6 l-col-6" type="password" name="pass" id="pass" required minlength="5">
+                    <span class="error s-col-12 m-col-12 l-col-12" aria-live="polite"></span>
                 </div>
                 <div class="row">
-                    <label class="s-col-6 m-col-6 l-col-6" for="pass">Repite la contraseña</label>
-                    <input class="s-col-6 m-col-6 l-col-6" type="password" name="pass" id="pass" required minlength="5">
+                    <label class="s-col-6 m-col-6 l-col-6" for="pass2">Repite la contraseña</label>
+                    <input class="s-col-6 m-col-6 l-col-6" type="password" name="pass" id="pass2" required minlength="5">
+                    <span class="error s-col-12 m-col-12 l-col-12" aria-live="polite"></span>
                 </div>
                 <div class="row">
                     <div class="s-col-12 m-col-12 l-col-12">
