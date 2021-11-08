@@ -196,7 +196,7 @@ if (isset($_REQUEST['crear_partida'])) {
     $partida = Conexion::getUltimaPartida();
     $_SESSION['partida'] = $partida;
     $participante = new Participante(null, $p->getEmail(), $partida->getId_partida(), 0);
-    $_SESSION['jugador'] = $jugador;
+    $_SESSION['participante'] = $participante;
     Conexion::addParticipante($participante);
     header("Location:elegir.php");
 }
@@ -207,7 +207,7 @@ if (isset($_REQUEST['unirme'])) {
         $partida = Conexion::getPartida($_REQUEST['id_partida']);
         $_SESSION['partida'] = $partida;
         $participante = new Participante(null, $p->getEmail(), $partida->getId_partida(), 0);
-        $_SESSION['jugador'] = $jugador;
+        $_SESSION['participante'] = $participante;
         header("Location:elegir.php");
     }else{
         header("Location:elegir.php");
