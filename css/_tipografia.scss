@@ -3,7 +3,7 @@ $size: 5rem;
     h#{$i} {
         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
         font-size: $size * (0.5/$i);
-        color: $color1-Encendido;
+        color: $marron3;
         text-decoration: underline $color2 0.13em;
     }
 }
@@ -12,7 +12,7 @@ $size: 5rem;
         h#{$i} {
             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
             font-size: $size * (1/$i);
-            color: $color1-Encendido;
+            color: $marron3;
             text-decoration: underline $color2 0.13em;
         }
     }
@@ -22,7 +22,7 @@ $size: 5rem;
         h#{$i} {
             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
             font-size: $size * (1.2/$i);
-            color: $color1-Encendido;
+            color: $marron3;
             text-decoration: underline $color2 0.13em;
         }
     }
@@ -32,14 +32,14 @@ $size: 5rem;
         h#{$i} {
             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
             font-size: $size * (1.5/$i);
-            color: $color1-Encendido;
+            color: $marron3;
             text-decoration: underline $color2 0.13em;
         }
     }
 }
 p {
     font-family: "Times New Roman", Times, serif;
-    color: $color1-Encendido;
+    color: $marron3;
 }
 
 a{

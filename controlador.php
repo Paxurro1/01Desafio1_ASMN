@@ -7,6 +7,8 @@ require_once 'Persona.php';
 require_once 'Conexion.php';
 require_once 'Pregunta.php';
 require_once 'Respuesta.php';
+require_once 'Partida.php';
+require_once 'Participante.php';
 require_once 'phpmailer/src/Exception.php';
 require_once 'phpmailer/src/PHPMailer.php';
 require_once 'phpmailer/src/SMTP.php';
@@ -93,16 +95,16 @@ if (isset($_REQUEST['crear_pregunta'])) {
     } else if ($_REQUEST['respuesta'] == 4) {
         $respuesta = $_REQUEST['respuesta4'];
     }
-    $p = new Pregunta(null, $_REQUEST['pregunta'], $respuesta);
-    Conexion::addPregunta($p);
-    $p = Conexion::getPreguntaTexto($p);
-    $respuesta = new Respuesta(null, $p->getId_pregunta(), $_REQUEST['respuesta1']);
+    $pre = new Pregunta(null, $_REQUEST['pregunta'], $respuesta);
+    Conexion::addPregunta($pre);
+    $pre = Conexion::getPreguntaTexto($pre);
+    $respuesta = new Respuesta(null, $pre->getId_pregunta(), $_REQUEST['respuesta1']);
     Conexion::addRespuesta($respuesta);
-    $respuesta = new Respuesta(null, $p->getId_pregunta(), $_REQUEST['respuesta2']);
+    $respuesta = new Respuesta(null, $pre->getId_pregunta(), $_REQUEST['respuesta2']);
     Conexion::addRespuesta($respuesta);
-    $respuesta = new Respuesta(null, $p->getId_pregunta(), $_REQUEST['respuesta3']);
+    $respuesta = new Respuesta(null, $pre->getId_pregunta(), $_REQUEST['respuesta3']);
     Conexion::addRespuesta($respuesta);
-    $respuesta = new Respuesta(null, $p->getId_pregunta(), $_REQUEST['respuesta4']);
+    $respuesta = new Respuesta(null, $pre->getId_pregunta(), $_REQUEST['respuesta4']);
     Conexion::addRespuesta($respuesta);
     header("Location:preguntas.php");
 }
@@ -185,4 +187,29 @@ if (isset($_REQUEST['cerrar_sesion'])) {
     Conexion::desconectarJugador($p->getEmail());
     unset($_SESSION);
     header("Location:index.php");
+}
+
+if (isset($_REQUEST['crear_partida'])) {
+    $p = $_SESSION['jugador'];
+    $partida = new Partida(null, 1, 0, 0, 0);
+    Conexion::addPartida($partida);
+    $partida = Conexion::getUltimaPartida();
+    $_SESSION['partida'] = $partida;
+    $participante = new Participante(null, $p->getEmail(), $partida->getId_partida(), 0);
+    $_SESSION['jugador'] = $jugador;
+    Conexion::addParticipante($participante);
+    header("Location:elegir.php");
+}
+
+if (isset($_REQUEST['unirme'])) {
+    if($_REQUEST['participantes'] < 5){
+        Conexion::unirme($_SESSION['jugador']);
+        $partida = Conexion::getPartida($_REQUEST['id_partida']);
+        $_SESSION['partida'] = $partida;
+        $participante = new Participante(null, $p->getEmail(), $partida->getId_partida(), 0);
+        $_SESSION['jugador'] = $jugador;
+        header("Location:elegir.php");
+    }else{
+        header("Location:elegir.php");
+    }
 }

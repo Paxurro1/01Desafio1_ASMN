@@ -44,10 +44,7 @@
     <div class="row">
         <div class="s-col-4 m-col-4 l-col-4 offset-by-4">
             <div class="row">
-                <button class="button_1 s-col-12 m-col-12 l-col-12">Unirme a una partida</button>
-            </div>
-            <div class="row">
-                <button class="button_1 s-col-12 m-col-12 l-col-12">Crear una sala</button>
+                <button class="button_1 s-col-12 m-col-12 l-col-12" onclick="window.location.href='elegir.php'">Jugar</button>
             </div>
             <div class="row">
                 <button class="button_1 s-col-12 m-col-12 l-col-12" onclick="window.location.href='ranking.php'">Ranking</button>

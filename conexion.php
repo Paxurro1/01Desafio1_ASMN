@@ -3,6 +3,8 @@ require_once 'Constantes.php';
 require_once 'Persona.php';
 require_once 'Pregunta.php';
 require_once 'Respuesta.php';
+require_once 'Partida.php';
+require_once 'Participante.php';
 class Conexion
 {
     private static $conexion;
@@ -54,7 +56,7 @@ class Conexion
     {
         self::abrirConexion();
         $fallo = 'No hay fallo';
-        $query = "UPDATE jugador SET email = '$email', usuario = '$usuario', activo = '$activo', rol = '$rol' WHERE email = '$email'";
+        $query = "UPDATE jugador SET usuario = '$usuario', activo = '$activo', rol = '$rol' WHERE email = '$email'";
         if (mysqli_query(self::$conexion, $query)) {
         } else {
             $fallo = "Error al editar: " . mysqli_error(self::$conexion) . '<br/>';
@@ -376,5 +378,115 @@ class Conexion
         }
         self::cerrarConexion();
         return $jugadores;
+    }
+
+    public static function addPartida($partida)
+    {
+        self::abrirConexion();
+        $fallo = 'No hay fallo';
+        $query = "INSERT INTO partida (id_partida, n_participantes, terminada, llaves, ganada) VALUES (null, ? , ?, ?, ?)";
+        $stmt = mysqli_stmt_init(self::$conexion);
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, "iiii", $partida->getN_participantes(), $partida->getTerminada(), $partida->getLlaves(), $partida->getGanada());
+            mysqli_stmt_execute($stmt);
+        } else {
+            $fallo = "Error al insertar: " . mysqli_error(self::$conexion) . '<br/>';
+        }
+        self::cerrarConexion();
+        return $fallo;
+    }
+
+    public static function getUltimaPartida()
+    {
+        self::abrirConexion();
+        $partida = null;
+        $query = "SELECT * FROM partida WHERE id_partida = (SELECT MAX(id_partida) FROM partida)";
+        if ($resultado = mysqli_query(self::$conexion, $query)) {
+            while ($fila = mysqli_fetch_array($resultado)) {
+                $partida = new Partida($fila["id_partida"], $fila["n_participantes"], $fila["terminada"], $fila["llaves"], $fila["ganada"]);
+            }
+        }
+        self::cerrarConexion();
+        return $partida;
+    }
+
+    public static function addParticipante($participante)
+    {
+        self::abrirConexion();
+        $fallo = 'No hay fallo';
+        $query = "INSERT INTO participantes (id_participante, email, id_partida, almirante) VALUES (null, ? , ?, ?)";
+        $stmt = mysqli_stmt_init(self::$conexion);
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, "sii", $participante->getEmail(), $participante->getId_partida(), $participante->getAlmirante());
+            mysqli_stmt_execute($stmt);
+        } else {
+            $fallo = "Error al insertar: " . mysqli_error(self::$conexion) . '<br/>';
+        }
+        self::cerrarConexion();
+        return $fallo;
+    }
+
+    public static function getPartidas()
+    {
+        self::abrirConexion();
+        $partida = null;
+        $query = "SELECT * FROM partida";
+        $partidas = [];
+        if ($resultado = mysqli_query(self::$conexion, $query)) {
+            while ($fila = mysqli_fetch_array($resultado)) {
+                $partida = new Partida($fila["id_partida"], $fila["n_participantes"], $fila["terminada"], $fila["llaves"], $fila["ganada"]);
+                $partidas[$partida->getId_partida()] = $partida;
+            }
+        }
+        self::cerrarConexion();
+        return $partidas;
+    }
+
+    public static function getParticipantes($id)
+    {
+        self::abrirConexion();
+        $query = "SELECT * FROM participantes WHERE id_partida = ?";
+        $stmt = mysqli_stmt_init(self::$conexion);
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, "i", $id);
+            mysqli_stmt_execute($stmt);
+            $resultado = mysqli_stmt_get_result($stmt);
+            $participantes = [];
+            while ($fila = mysqli_fetch_array($resultado)) {
+                $participante = new Participante($fila["id_participante"], $fila["email"], $fila["id_partida"], $fila["almirante"]);
+                $participantes[$participante->getId_participante()] = $participante;
+            }
+        }
+        self::cerrarConexion();
+        return $participantes;
+    }
+
+    public static function unirme($participante)
+    {
+        self::abrirConexion();
+        $numero = "SELECT * FROM partida WHERE id_partida = '" . $participante->getEmail() . "'";
+        $numero = $numero + 1;
+        $fallo = 'No hay fallo';
+        $query = "UPDATE partida SET n_participantes = '$numero'";
+        if (mysqli_query(self::$conexion, $query)) {
+        } else {
+            $fallo = "Error al modificar: " . mysqli_error(self::$conexion) . '<br/>';
+        }
+        self::cerrarConexion();
+        return $fallo;
+    }
+
+    public static function getPartida($id)
+    {
+        self::abrirConexion();
+        $partida = null;
+        $query = "SELECT * FROM partida WHERE id_partida = ' $id '";
+        if ($resultado = mysqli_query(self::$conexion, $query)) {
+            while ($fila = mysqli_fetch_array($resultado)) {
+                $partida = new Partida($fila["id_partida"], $fila["n_participantes"], $fila["terminada"], $fila["llaves"], $fila["ganada"]);
+            }
+        }
+        self::cerrarConexion();
+        return $partida;
     }
 }

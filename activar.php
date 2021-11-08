@@ -31,6 +31,7 @@
             <a href="index.php">Ir al loging</a>
         </div>
     </div>
+
 </body>
 
 </html>

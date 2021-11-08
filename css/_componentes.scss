@@ -54,8 +54,12 @@ body {
         h#{$i} {
             text-shadow: black 5px 4px 8px;
             text-align: center;
-            color: $marron3;
             font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
         }
     }
+}
+
+.menu{
+    background-color: $color4;
+    text-align: center;
 }

@@ -415,43 +415,42 @@ body {
 .cabecera1 h1 {
   text-shadow: black 5px 4px 8px;
   text-align: center;
-  color: #8d4925;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
 .cabecera1 h2 {
   text-shadow: black 5px 4px 8px;
   text-align: center;
-  color: #8d4925;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
 .cabecera1 h3 {
   text-shadow: black 5px 4px 8px;
   text-align: center;
-  color: #8d4925;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
 .cabecera1 h4 {
   text-shadow: black 5px 4px 8px;
   text-align: center;
-  color: #8d4925;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
 .cabecera1 h5 {
   text-shadow: black 5px 4px 8px;
   text-align: center;
-  color: #8d4925;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
 .cabecera1 h6 {
   text-shadow: black 5px 4px 8px;
   text-align: center;
-  color: #8d4925;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+.menu {
+  background-color: #d2f4e7;
+  text-align: center;
 }
 
 .table1 {
@@ -496,7 +495,7 @@ body {
 h1 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 2.5rem;
-  color: #0b986a;
+  color: #8d4925;
   -webkit-text-decoration: underline #8edcb9 0.13em;
           text-decoration: underline #8edcb9 0.13em;
 }
@@ -504,7 +503,7 @@ h1 {
 h2 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 1.25rem;
-  color: #0b986a;
+  color: #8d4925;
   -webkit-text-decoration: underline #8edcb9 0.13em;
           text-decoration: underline #8edcb9 0.13em;
 }
@@ -512,7 +511,7 @@ h2 {
 h3 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 0.83333rem;
-  color: #0b986a;
+  color: #8d4925;
   -webkit-text-decoration: underline #8edcb9 0.13em;
           text-decoration: underline #8edcb9 0.13em;
 }
@@ -520,7 +519,7 @@ h3 {
 h4 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 0.625rem;
-  color: #0b986a;
+  color: #8d4925;
   -webkit-text-decoration: underline #8edcb9 0.13em;
           text-decoration: underline #8edcb9 0.13em;
 }
@@ -528,7 +527,7 @@ h4 {
 h5 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 0.5rem;
-  color: #0b986a;
+  color: #8d4925;
   -webkit-text-decoration: underline #8edcb9 0.13em;
           text-decoration: underline #8edcb9 0.13em;
 }
@@ -536,7 +535,7 @@ h5 {
 h6 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 0.41667rem;
-  color: #0b986a;
+  color: #8d4925;
   -webkit-text-decoration: underline #8edcb9 0.13em;
           text-decoration: underline #8edcb9 0.13em;
 }
@@ -545,42 +544,42 @@ h6 {
   h1 {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 5rem;
-    color: #0b986a;
+    color: #8d4925;
     -webkit-text-decoration: underline #8edcb9 0.13em;
             text-decoration: underline #8edcb9 0.13em;
   }
   h2 {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 2.5rem;
-    color: #0b986a;
+    color: #8d4925;
     -webkit-text-decoration: underline #8edcb9 0.13em;
             text-decoration: underline #8edcb9 0.13em;
   }
   h3 {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 1.66667rem;
-    color: #0b986a;
+    color: #8d4925;
     -webkit-text-decoration: underline #8edcb9 0.13em;
             text-decoration: underline #8edcb9 0.13em;
   }
   h4 {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 1.25rem;
-    color: #0b986a;
+    color: #8d4925;
     -webkit-text-decoration: underline #8edcb9 0.13em;
             text-decoration: underline #8edcb9 0.13em;
   }
   h5 {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 1rem;
-    color: #0b986a;
+    color: #8d4925;
     -webkit-text-decoration: underline #8edcb9 0.13em;
             text-decoration: underline #8edcb9 0.13em;
   }
   h6 {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 0.83333rem;
-    color: #0b986a;
+    color: #8d4925;
     -webkit-text-decoration: underline #8edcb9 0.13em;
             text-decoration: underline #8edcb9 0.13em;
   }
@@ -590,42 +589,42 @@ h6 {
   h1 {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 6rem;
-    color: #0b986a;
+    color: #8d4925;
     -webkit-text-decoration: underline #8edcb9 0.13em;
             text-decoration: underline #8edcb9 0.13em;
   }
   h2 {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 3rem;
-    color: #0b986a;
+    color: #8d4925;
     -webkit-text-decoration: underline #8edcb9 0.13em;
             text-decoration: underline #8edcb9 0.13em;
   }
   h3 {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 2rem;
-    color: #0b986a;
+    color: #8d4925;
     -webkit-text-decoration: underline #8edcb9 0.13em;
             text-decoration: underline #8edcb9 0.13em;
   }
   h4 {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 1.5rem;
-    color: #0b986a;
+    color: #8d4925;
     -webkit-text-decoration: underline #8edcb9 0.13em;
             text-decoration: underline #8edcb9 0.13em;
   }
   h5 {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 1.2rem;
-    color: #0b986a;
+    color: #8d4925;
     -webkit-text-decoration: underline #8edcb9 0.13em;
             text-decoration: underline #8edcb9 0.13em;
   }
   h6 {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 1rem;
-    color: #0b986a;
+    color: #8d4925;
     -webkit-text-decoration: underline #8edcb9 0.13em;
             text-decoration: underline #8edcb9 0.13em;
   }
@@ -635,42 +634,42 @@ h6 {
   h1 {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 7.5rem;
-    color: #0b986a;
+    color: #8d4925;
     -webkit-text-decoration: underline #8edcb9 0.13em;
             text-decoration: underline #8edcb9 0.13em;
   }
   h2 {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 3.75rem;
-    color: #0b986a;
+    color: #8d4925;
     -webkit-text-decoration: underline #8edcb9 0.13em;
             text-decoration: underline #8edcb9 0.13em;
   }
   h3 {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 2.5rem;
-    color: #0b986a;
+    color: #8d4925;
     -webkit-text-decoration: underline #8edcb9 0.13em;
             text-decoration: underline #8edcb9 0.13em;
   }
   h4 {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 1.875rem;
-    color: #0b986a;
+    color: #8d4925;
     -webkit-text-decoration: underline #8edcb9 0.13em;
             text-decoration: underline #8edcb9 0.13em;
   }
   h5 {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 1.5rem;
-    color: #0b986a;
+    color: #8d4925;
     -webkit-text-decoration: underline #8edcb9 0.13em;
             text-decoration: underline #8edcb9 0.13em;
   }
   h6 {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 1.25rem;
-    color: #0b986a;
+    color: #8d4925;
     -webkit-text-decoration: underline #8edcb9 0.13em;
             text-decoration: underline #8edcb9 0.13em;
   }
@@ -678,7 +677,7 @@ h6 {
 
 p {
   font-family: "Times New Roman", Times, serif;
-  color: #0b986a;
+  color: #8d4925;
 }
 
 a {
