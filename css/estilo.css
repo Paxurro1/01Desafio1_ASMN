@@ -718,7 +718,7 @@ a:hover {
   border-style: double;
   border-color: #22a374;
   display: block;
-  border-radius: 20%;
+  border-radius: 0%;
   background-color: #d2f4e7;
 }
 
